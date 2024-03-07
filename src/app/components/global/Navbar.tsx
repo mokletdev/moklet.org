@@ -26,7 +26,7 @@ export default function Navbar() {
           <Link
             key={navOption.title}
             href={navOption.href}
-            className={`hover:text-primary-400 w-1/5 rounded-full border border-white py-2 text-center backdrop-blur-lg transition-all duration-300 hover:border-neutral-400 ${pathname === navOption.href ? "text-red-400" : ""}`}
+            className={`hover:text-primary-400 w-1/5 rounded-full border border-white py-2 text-center backdrop-blur-lg transition-all duration-300 ${pathname === navOption.href ? "text-red-400" : ""}`}
           >
             {navOption.title}
           </Link>
