@@ -17,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>{children}</body>
+      <body className={montserrat.className + " max-w-[1192px]"}>
+        {children}
+      </body>
     </html>
   );
 }
