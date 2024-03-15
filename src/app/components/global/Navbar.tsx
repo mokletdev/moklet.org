@@ -19,13 +19,13 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="mx-auto w-full max-w-[1192px] py-[22px]">
-      <div className="fixed left-1/2 flex w-full max-w-[703px] -translate-x-1/2 justify-between rounded-full border border-neutral-300 px-2 py-1">
+    <nav className="relative z-[999] mx-auto w-full max-w-[1192px]">
+      <div className="fixed left-1/2 top-[24.5px] flex w-full max-w-[703px] -translate-x-1/2 justify-between rounded-full border border-neutral-300 bg-[rgba(255,255,255,0.04)] px-2 py-1 backdrop-blur-xl">
         {navOptions.map((navOption) => (
           <Link
             key={navOption.title}
             href={navOption.href}
-            className={`w-1/5 rounded-full border border-white py-2 text-center backdrop-blur-lg transition-all duration-300 hover:text-primary-400 ${pathname === navOption.href ? "text-red-400" : ""}`}
+            className={`w-1/5 rounded-full py-2 text-center transition-all duration-300 hover:text-primary-400 ${pathname === navOption.href ? "text-red-400" : ""}`}
           >
             {navOption.title}
           </Link>
