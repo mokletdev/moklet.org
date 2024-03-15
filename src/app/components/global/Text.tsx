@@ -31,9 +31,10 @@ export function UnderlineTitle({
       >
         {children}
       </h2>
-      <span
-        className={`absolute left-[3px] top-[25px] z-0 h-[19px] w-[${lineWidth}] bg-primary-100`}
-      ></span>
+      <div
+        className={`absolute left-[3px] top-[25px] z-0 h-[19px] bg-primary-100`}
+        style={{ width: lineWidth }}
+      ></div>
     </div>
   );
 }
