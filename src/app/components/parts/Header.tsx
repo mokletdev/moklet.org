@@ -34,6 +34,20 @@ export default function Header() {
             <ArrowIcon className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
           </Link>
         </div>
+        <Image
+          src={"/images/Header-1.png"}
+          width={383}
+          height={510}
+          alt="Header's image"
+          className="absolute left-0 top-[160px] -z-10"
+        />
+        <Image
+          src={"/images/Header-2.png"}
+          width={383}
+          height={510}
+          alt="Header's image"
+          className="absolute right-0 top-[180px] -z-10"
+        />
       </div>
     </section>
   );
