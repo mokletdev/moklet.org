@@ -13,7 +13,10 @@ export default function Opinions() {
             <div className="flex gap-[18px]">
               <div className="flex w-[424px] items-center justify-center rounded-2xl border border-neutral-400 px-[28px] py-[32px]">
                 <div className="text-wrap">
-                  <PersonData name="Rina Setiawan" role="Pembimbing Media Moklet"/>
+                  <PersonData
+                    name="Rina Setiawan"
+                    role="Pembimbing Media Moklet"
+                  />
                   <p className="text-neutral-500">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nulla ullamcorper odio justo.
@@ -23,7 +26,10 @@ export default function Opinions() {
 
               <div className="flex w-[424px] items-center justify-center rounded-2xl border border-neutral-400 px-[28px] py-[32px]">
                 <div className="text-wrap">
-                  <PersonData name="Ibani Hillabi" role="Ketua PASKATEMA 2023/2024"/>
+                  <PersonData
+                    name="Ibani Hillabi"
+                    role="Ketua PASKATEMA 2023/2024"
+                  />
                   <p className="text-neutral-500">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Nulla ullamcorper odio justo.
@@ -34,7 +40,10 @@ export default function Opinions() {
 
             <div className="flex w-[865px] items-center justify-center rounded-2xl border border-neutral-400 px-[28px] py-[32px]">
               <div className="text-wrap">
-                <PersonData name="Ibani Hillabi" role="Ketua PASKATEMA 2023/2024"/>
+                <PersonData
+                  name="Ibani Hillabi"
+                  role="Ketua PASKATEMA 2023/2024"
+                />
                 <p className="text-neutral-500">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                   ullamcorper odio justo, vitae blandit lacus facilisis
@@ -48,7 +57,7 @@ export default function Opinions() {
 
           <div className="flex w-[309px] items-center justify-center rounded-2xl border border-neutral-400 px-[28px] py-[32px]">
             <div className="text-wrap">
-              <PersonData name="Budi Prasetyo" role="Ketua METIC 2024"/>
+              <PersonData name="Budi Prasetyo" role="Ketua METIC 2024" />
               <p className="text-neutral-500">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                 ullamcorper odio justo, vitae blandit lacus facilisis lobortis.
