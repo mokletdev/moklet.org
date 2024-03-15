@@ -1,10 +1,12 @@
-import Navbar from "./components/global/Navbar";
+import Header from "./components/parts/Header";
+import Opinions from "./components/parts/Opinions";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
-      <main className="max-w-[1192px] py-[22px]"></main>
+      <Header />
+      <section></section>
+      <Opinions />
     </>
   );
 }
