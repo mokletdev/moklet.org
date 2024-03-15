@@ -12,3 +12,67 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+enum Roles {
+  SuperAdmin
+  Admin
+  OSIS
+  MPK
+  BDI
+  PALWAGA
+  PASKATEMA
+  TSBC
+  TSFC
+  TSVC
+  TSCC
+  PMR
+  MEMO
+  MAC
+  METIC
+  COMET
+}
+
+model User {
+  id       String     @id @default(uuid()) @map("user_id") @db.Char(36)
+  name     String
+  email    String     @unique
+  role     Roles
+  user_pic String
+  userAuth User_Auth?
+  posts    Post[]
+}
+
+model User_Auth {
+  id        String  @id @default(uuid()) @map("userauth_id") @db.Char(36)
+  password  String?
+  userEmail String  @unique
+  user      User    @relation(references: [email], fields: [userEmail])
+}
+
+model Post {
+  id          String     @id @default(uuid()) @map("post_id") @db.Char(36)
+  title       String
+  view_count  Int        @default(0)
+  description String
+  content     String
+  tags        Tag[]
+  created_at  DateTime   @default(now())
+  updated_at  DateTime   @updatedAt
+  stage       Post_Stage
+  user_id     String
+  user        User       @relation(fields: [user_id], references: [id])
+  slug        String
+  thumbnail   String
+  reaction    Json
+}
+
+enum Post_Stage {
+  Draft
+  Publish
+}
+
+model Tag {
+  tagName    String   @id
+  created_at DateTime @default(now())
+  posts      Post[]
+}
