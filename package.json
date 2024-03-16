@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "prettier --write ."
+  },
+  "engines": {
+    "node": "18.x"
   },
   "dependencies": {
     "dotenv-cli": "^7.3.0",
