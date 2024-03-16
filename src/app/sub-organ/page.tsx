@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function SubOrgan() {
+export default function SubOrganPage() {
   return (
     <>
       <section className="min-h-[744px] w-full">
@@ -18,7 +18,6 @@ export default function SubOrgan() {
         </div>
         <div className="relative w-full"></div>
       </section>
-      <section></section>
     </>
   );
 }
