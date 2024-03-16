@@ -1,16 +1,21 @@
 import Image from "next/image";
 
-interface PersonDataProps {
+export interface PersonDataProps {
   name: string;
   role: string;
+  image: string;
 }
 
-export default function PersonData({ name, role }: Readonly<PersonDataProps>) {
+export default function PersonData({
+  name,
+  role,
+  image,
+}: Readonly<PersonDataProps>) {
   return (
     <div className="mb-[22px] flex items-center gap-[12px]">
       <Image
-        src={"https://i.scdn.co/image/ab67616d00001e02f99ee9d6d91c399522b0baf9"}
-        alt="Budi"
+        src={image}
+        alt={name}
         width={44}
         height={44}
         className="h-full max-h-[44px] w-full max-w-[44px] rounded-full"
