@@ -24,15 +24,11 @@ export function UnderlineTitle({
 }: Readonly<TextProps & { lineWidth: string | number }>) {
   return (
     <div className="relative">
-      <h2
-        className={
-          "absolute z-10 w-[1192px] text-4xl font-bold text-black " + className
-        }
-      >
+      <h2 className={"z-10 text-4xl font-bold text-black " + className}>
         {children}
       </h2>
       <div
-        className={`absolute left-[3px] top-[25px] z-0 h-[19px] bg-primary-100`}
+        className={`absolute left-[3px] top-[28px] -z-10 h-[16px] bg-primary-100`}
         style={{ width: lineWidth }}
       ></div>
     </div>

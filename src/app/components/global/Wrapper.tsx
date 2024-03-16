@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 interface SectionWrapperProps {
-  children: ReactNode;
+  children?: ReactNode;
   id: string;
 }
 
