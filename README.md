@@ -4,6 +4,19 @@ moklet.org is a one doorway to explore Moklet's organizations' creativity and in
 
 ## How To Run
 
+Clone this repository:
+
+```bash
+git clone https://github.com/mokletdev/moklet.org.git
+```
+
+Install dependencies and setup husky
+
+```bash
+npm install
+npm run prepare
+```
+
 To run the development server:
 
 ```bash

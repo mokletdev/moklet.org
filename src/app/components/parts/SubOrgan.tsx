@@ -10,7 +10,7 @@ function SubOrganCount({
   return (
     <div>
       <H1 className="text-primary-400">{count < 10 ? `0${count}` : count}</H1>
-      <P>Bidang Olahraga</P>
+      <P>{title}</P>
     </div>
   );
 }
