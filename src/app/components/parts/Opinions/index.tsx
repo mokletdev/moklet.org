@@ -4,12 +4,12 @@ import Saying from "./Saying";
 
 export default function Opinions() {
   return (
-    <SectionWrapper id="#pendapat">
+    <SectionWrapper id="pendapat">
       <div className="flex flex-col justify-center">
         <UnderlineTitle lineWidth={"232px"}>
           Kata Mereka Tentang Organisasi dan Sub-Organisasi Moklet
         </UnderlineTitle>
-        <div className="mt-[102px] flex gap-[18px]">
+        <div className="mt-[54px] flex gap-[18px]">
           <div className="flex flex-col gap-[24px]">
             <div className="flex gap-[18px]">
               <div className="flex w-[424px] items-center justify-center rounded-2xl border border-neutral-400 px-[28px] py-[32px]">

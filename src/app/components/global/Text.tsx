@@ -17,6 +17,12 @@ export function P({ children, className }: Readonly<TextProps>) {
   return <p className={"text-neutral-500 " + className}>{children}</p>;
 }
 
+export function H2({ children, className }: Readonly<TextProps>) {
+  return (
+    <h2 className={"text-4xl font-bold text-black " + className}>{children}</h2>
+  );
+}
+
 export function UnderlineTitle({
   children,
   className,
