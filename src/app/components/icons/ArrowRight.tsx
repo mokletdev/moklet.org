@@ -13,18 +13,18 @@ export default function ArrowRight({
       <path
         d="M14.43 6.10168L20.5 12.1717L14.43 18.2417"
         stroke="#E04E4E"
-        stroke-width="1.2"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.2"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M3.5 12.1716H20.33"
         stroke="#E04E4E"
-        stroke-width="1.2"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="1.2"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
