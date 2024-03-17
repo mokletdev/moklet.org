@@ -43,10 +43,11 @@ model User {
 }
 
 model User_Auth {
-  id        String  @id @default(uuid()) @map("userauth_id") @db.Char(36)
-  password  String?
-  userEmail String  @unique
-  user      User    @relation(references: [email], fields: [userEmail])
+  id         String    @id @default(uuid()) @map("userauth_id") @db.Char(36)
+  password   String?
+  last_login DateTime?
+  userEmail  String    @unique
+  user       User      @relation(references: [email], fields: [userEmail], onDelete: Cascade)
 }
 
 model Post {
@@ -64,6 +65,7 @@ model Post {
   slug        String
   thumbnail   String
   reaction    Json
+  deleted     DateTime?
 }
 
 enum Post_Stage {
