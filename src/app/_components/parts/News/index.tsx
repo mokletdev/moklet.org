@@ -1,6 +1,6 @@
-import { SectionWrapper } from "@/app/components/global/Wrapper";
-import { H2 } from "@/app/components/global/Text";
-import ArrowRight from "@/app/components/icons/ArrowRight";
+import { SectionWrapper } from "@/app/_components/global/Wrapper";
+import { H2 } from "@/app/_components/global/Text";
+import ArrowRight from "@/app/_components/icons/ArrowRight";
 import Link from "next/link";
 import Image from "next/image";
 

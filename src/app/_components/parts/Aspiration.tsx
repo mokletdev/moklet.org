@@ -2,7 +2,7 @@ import { PrimaryButton } from "../global/Button";
 import { TextArea, TextField } from "../global/Input";
 import { H2, P } from "../global/Text";
 import { SectionWrapper } from "../global/Wrapper";
-import EclipseIcon from "@/app/components/icons/EclipseIcon";
+import EclipseIcon from "@/app/_components/icons/EclipseIcon";
 
 export default function Aspiration() {
   return (
