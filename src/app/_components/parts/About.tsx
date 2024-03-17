@@ -1,6 +1,6 @@
-import LinkButton from "@/app/components/global/LinkButton";
-import { SectionWrapper } from "@/app/components/global/Wrapper";
-import { P, UnderlineTitle } from "@/app/components/global/Text";
+import LinkButton from "@/app/_components/global/LinkButton";
+import { SectionWrapper } from "@/app/_components/global/Wrapper";
+import { P, UnderlineTitle } from "@/app/_components/global/Text";
 import Image from "next/image";
 
 export default function About() {
