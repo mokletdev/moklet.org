@@ -8,10 +8,11 @@
     "start": "next start",
     "lint": "next lint",
     "prettier": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "prisma": "dotenv -e .env.local prisma migrate dev"
   },
   "engines": {
-    "node": "18.x"
+    "node": "20.x"
   },
   "dependencies": {
     "@prisma/client": "^5.11.0",
