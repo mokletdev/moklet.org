@@ -72,7 +72,7 @@ model Post {
 }
 
 model Tag {
-  tagName    Int      @id @default(autoincrement()) @map("tag_id")
+  tagName    String   @id
   created_at DateTime @default(now())
   posts      Post[]
 }
