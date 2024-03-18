@@ -20,7 +20,7 @@ export function TextField({
         type="text"
         name={label}
         placeholder={placeholder}
-        className="rounded-xl border border-neutral-500 px-[18px] py-[14px] text-black placeholder-neutral-500 focus:outline-none"
+        className="rounded-xl border border-neutral-500 px-[18px] active:border-black hover:border-black py-[14px] text-black placeholder-neutral-500 focus:outline-none transition-all duration-500"
       />
     </div>
   );
@@ -41,7 +41,7 @@ export function TextArea({
       <textarea
         name={label}
         placeholder={placeholder}
-        className="h-[144px] rounded-xl border border-neutral-500 px-[18px] py-[14px] text-black placeholder-neutral-500 focus:outline-none"
+        className="h-[144px] rounded-xl border border-neutral-500 px-[18px] active:border-black hover:border-black py-[14px] text-black placeholder-neutral-500 focus:outline-none transition-all duration-500"
       />
     </div>
   );

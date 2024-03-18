@@ -18,7 +18,7 @@ function SubOrganCount({
 export default function SubOrgan() {
   return (
     <SectionWrapper id="sub-organ">
-      <div className="flex w-full items-center justify-between">
+      <div className="flex flex-col-reverse md:flex-row gap-[72px] md:gap-0 w-full items-center justify-between">
         <div className="w-full max-w-3xl">
           <div className="mb-[42px]">
             <UnderlineTitle lineWidth="330px" className="mb-[18px]">
@@ -29,7 +29,7 @@ export default function SubOrgan() {
               Sub-Organisasi OSIS Moklet yang inspiratif dan beragam.
             </P>
           </div>
-          <div className="mb-11 flex w-full items-center gap-[62px]">
+          <div className="mb-11 flex flex-col sm:flex-row w-full items-center gap-[62px]">
             <SubOrganCount count={3} title="Bidang Olahraga" />
             <SubOrganCount count={2} title="Bidang Seni & Bahasa" />
             <SubOrganCount count={5} title="Bidang Lainnya" />

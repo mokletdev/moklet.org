@@ -7,8 +7,8 @@ import EclipseIcon from "@/app/_components/icons/EclipseIcon";
 export default function Aspiration() {
   return (
     <SectionWrapper id="aspirasi">
-      <div className="relative flex w-full items-start justify-between gap-[54px]">
-        <div className="w-full max-w-[568px]">
+      <div className="relative flex flex-col md:flex-row w-full items-start justify-between gap-[54px]">
+        <div className="w-full">
           <H2 className="mb-[18px]">
             Sampaikan Aspirasimu untuk Masa Depan yang Lebih Baik
           </H2>
@@ -18,7 +18,7 @@ export default function Aspiration() {
             mengembangkan program-programnya.
           </P>
         </div>
-        <form className="block w-[568px]">
+        <form className="block w-full">
           <TextField
             label="judul"
             placeholder="Masukkan judul aspirasi"
@@ -31,8 +31,8 @@ export default function Aspiration() {
           />
           <PrimaryButton>Kirim aspirasi</PrimaryButton>
         </form>
-        <EclipseIcon className="absolute -top-12 -left-4" />
-        <EclipseIcon className="absolute bottom-36 left-[310px]" />
+        <EclipseIcon className="absolute -top-12 -left-4 hidden md:block" />
+        <EclipseIcon className="absolute bottom-36 left-[310px] hidden md:block" />
       </div>
     </SectionWrapper>
   );
