@@ -88,6 +88,9 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        <p className="font-normal text-black block md:hidden">
+          © 2024 Copyright MokletDev
+        </p>
       </div>
     </footer>
   );
