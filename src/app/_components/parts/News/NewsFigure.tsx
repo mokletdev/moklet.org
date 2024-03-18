@@ -5,7 +5,7 @@ import { stringifyDate } from "@/utils/atomics";
 
 export function NewsFigure({ post }: Readonly<{ post: PostWithTagsAndUser }>) {
   return (
-    <figure className="w-1/3">
+    <figure className="w-full md:w-1/3">
       <div className="h-[200px] w-full">
         <Image
           src={post.thumbnail}

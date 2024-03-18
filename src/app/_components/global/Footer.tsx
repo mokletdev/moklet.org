@@ -1,5 +1,6 @@
-import Link from "next/link";
 import Image from "@/app/_components/global/Image";
+import Link from "next/link";
+import { P } from "./Text";
 
 interface FootOption {
   title: string;
@@ -15,9 +16,9 @@ const footOptions: FootOption[] = [
 
 export default function Footer() {
   return (
-    <footer className="flex w-full items-center justify-center">
-      <div className="mb-[42px] mt-[82px] flex w-full justify-center gap-[158px]">
-        <div className="w-full max-w-[394px] justify-start">
+    <footer className="flex w-full items-center justify-between">
+      <div className="mb-[42px] mt-[82px] flex flex-col lg:flex-row w-full justify-between gap-[62px]">
+        <div className="w-full md:w-1/3">
           <div className="flex flex-col gap-[59px]">
             <div className="">
               <Image
@@ -26,24 +27,20 @@ export default function Footer() {
                 width={110}
                 height={39}
               />
-              <h3 className="pt-[18px] font-normal text-neutral-500">
+              <P className="pt-[18px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                 ullamcorper odio justo.
-              </h3>
+              </P>
             </div>
-            <div className="">
-              <h3 className="font-normal text-black">
-                Copyright MokletDev 2024
-              </h3>
-            </div>
+            <p className="font-normal text-black hidden md:block">
+              © 2024 Copyright MokletDev
+            </p>
           </div>
           <div></div>
         </div>
-        <div className="flex gap-[72px] text-black">
-          <div className="flex flex-col gap-[22px]">
-            <div className="min-w-[106px]">
-              <h3 className="font-normal text-neutral-500">Menu Utama</h3>
-            </div>
+        <div className="flex flex-col sm:flex-row text-black w-full gap-[52px] md:gap-0 md:w-[58%]">
+          <div className="flex flex-col gap-[22px] w-full md:w-1/4">
+            <h3 className="font-normal text-neutral-500">Menu Utama</h3>
             <div className="flex flex-col gap-[14px] ">
               {footOptions.map((footOption) => (
                 <Link href={footOption.href} key={footOption.title}>
@@ -54,10 +51,8 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-[22px]">
-            <div className="min-w-[106px]">
-              <h3 className="font-normal text-neutral-500">Menu Utama</h3>
-            </div>
+          <div className="flex flex-col gap-[22px] w-full md:w-1/4">
+            <h3 className="font-normal text-neutral-500">Menu Utama</h3>
             <div className="flex flex-col gap-[14px] ">
               {footOptions.map((footOption) => (
                 <Link href={footOption.href} key={footOption.title}>
@@ -68,10 +63,8 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-[22px]">
-            <div className="min-w-[106px]">
-              <h3 className="font-normal text-neutral-500">Menu Utama</h3>
-            </div>
+          <div className="flex flex-col gap-[22px] w-full md:w-1/4">
+            <h3 className="font-normal text-neutral-500">Menu Utama</h3>
             <div className="flex flex-col gap-[14px] ">
               {footOptions.map((footOption) => (
                 <Link href={footOption.href} key={footOption.title}>
@@ -82,10 +75,8 @@ export default function Footer() {
               ))}
             </div>
           </div>
-          <div className="flex flex-col gap-[22px]">
-            <div className="min-w-[106px]">
-              <h3 className="font-normal text-neutral-500">Menu Utama</h3>
-            </div>
+          <div className="flex flex-col gap-[22px] w-full md:w-1/4">
+            <h3 className="font-normal text-neutral-500">Menu Utama</h3>
             <div className="flex flex-col gap-[14px] ">
               {footOptions.map((footOption) => (
                 <Link href={footOption.href} key={footOption.title}>

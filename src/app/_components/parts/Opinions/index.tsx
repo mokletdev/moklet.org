@@ -9,10 +9,10 @@ export default function Opinions() {
         <UnderlineTitle lineWidth={"232px"}>
           Kata Mereka Tentang Organisasi dan Sub-Organisasi Moklet
         </UnderlineTitle>
-        <div className="mt-[54px] flex gap-[18px]">
-          <div className="flex flex-col gap-[24px]">
-            <div className="flex gap-[18px]">
-              <div className="flex w-[424px] items-center justify-center rounded-2xl border border-neutral-400 px-[28px] py-[32px]">
+        <div className="mt-[54px] flex flex-col md:flex-row gap-[18px] w-full">
+          <div className="flex flex-col gap-[24px] w-full md:w-[75%]">
+            <div className="flex flex-col md:flex-row gap-[18px] w-full">
+              <div className="flex w-full md:w-1/2 items-center justify-center rounded-2xl border border-neutral-400 px-[28px] py-[32px]">
                 <Saying
                   personData={{
                     name: "Rina Setiawan",
@@ -24,7 +24,7 @@ export default function Opinions() {
                   Nulla ullamcorper odio justo."
                 />
               </div>
-              <div className="flex w-[424px] items-center justify-center rounded-2xl border border-neutral-400 px-[28px] py-[32px]">
+              <div className="flex w-full md:w-1/2 items-center justify-center rounded-2xl border border-neutral-400 px-[28px] py-[32px]">
                 <Saying
                   personData={{
                     name: "Ibani Hillabi",
@@ -37,7 +37,7 @@ export default function Opinions() {
                 />
               </div>
             </div>
-            <div className="flex w-[865px] items-center justify-center rounded-2xl border border-neutral-400 px-[28px] py-[32px]">
+            <div className="flex w-full items-center justify-center rounded-2xl border border-neutral-400 px-[28px] py-[32px]">
               <Saying
                 personData={{
                   name: "Ibani Hillabi",
@@ -53,7 +53,7 @@ export default function Opinions() {
               />
             </div>
           </div>
-          <div className="flex w-[309px] items-center justify-center rounded-2xl border border-neutral-400 px-[28px] py-[32px]">
+          <div className="flex w-full md:w-[25%] items-center justify-center rounded-2xl border border-neutral-400 px-[28px] py-[32px]">
             <Saying
               personData={{
                 name: "Budi Prasetyo",

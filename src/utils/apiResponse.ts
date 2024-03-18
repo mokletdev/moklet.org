@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+
 const success = (data?: object, message: string = "Success") => {
   return NextResponse.json({
     status: 200,

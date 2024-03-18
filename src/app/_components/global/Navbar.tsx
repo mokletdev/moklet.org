@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "./Image";
+import HamburgerIcon from "../icons/HamburgerIcon";
 
 interface NavOption {
   title: string;
@@ -20,8 +21,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="relative z-[999] mx-auto w-full max-w-[1192px]">
-      <Link href={"/"} className="block mt-8">
+    <nav className="md:relative fixed z-[999] mx-auto w-full flex md:max-w-[1192px] py-4 md:py-0 px-5 bg-white md:bg-transparent justify-between">
+      <Link href={"/"} className="block md:mt-8">
         <Image
           src={"/horizontal.svg"}
           alt="Logo moklet.org"
@@ -30,7 +31,7 @@ export default function Navbar() {
           className="pointer-events-none h-[50px] w-[130px]"
         />
       </Link>
-      <div className="fixed left-1/2 top-[24.5px] flex w-full max-w-[602px] -translate-x-1/2 justify-between rounded-full border border-neutral-300 bg-white px-[50px] py-3">
+      <div className="fixed hidden left-1/2 top-[24.5px] md:flex w-full max-w-[602px] -translate-x-1/2 justify-between rounded-full border border-neutral-300 bg-white px-[50px] py-3">
         {navOptions.map((navOption) => (
           <Link
             key={navOption.title}
@@ -41,6 +42,9 @@ export default function Navbar() {
           </Link>
         ))}
       </div>
+      <button className="block md:hidden">
+        <HamburgerIcon />
+      </button>
     </nav>
   );
 }
