@@ -61,7 +61,7 @@ model Post {
   content      String
   tags         Tag[]
   created_at   DateTime  @default(now())
-  published_at DateTime
+  published_at DateTime?
   updated_at   DateTime  @updatedAt
   published    Boolean   @default(false)
   user_id      String
