@@ -30,49 +30,110 @@ enum Roles {
   MAC
   METIC
   COMET
+  Guest
 }
 
 model User {
-  id       String     @id @default(uuid()) @map("user_id") @db.Char(36)
-  name     String
-  email    String     @unique
-  role     Roles
-  user_pic String
-  userAuth User_Auth?
-  posts    Post[]
+  id               String            @id @default(uuid()) @map("user_id") @db.Char(36)
+  name             String
+  email            String            @unique
+  role             Roles             @default(Guest)
+  user_pic         String
+  userAuth         User_Auth?
+  posts            Post[]
+  forms            Aspiration_Form[]
+  form_submissions Submission[]
 }
 
 model User_Auth {
-  id        String  @id @default(uuid()) @map("userauth_id") @db.Char(36)
-  password  String?
-  userEmail String  @unique
-  user      User    @relation(references: [email], fields: [userEmail])
+  id         String    @id @default(uuid()) @map("userauth_id") @db.Char(36)
+  password   String?
+  last_login DateTime?
+  userEmail  String    @unique
+  user       User      @relation(references: [email], fields: [userEmail], onDelete: Cascade)
 }
 
 model Post {
-  id          String     @id @default(uuid()) @map("post_id") @db.Char(36)
+  id          String    @id @default(uuid()) @map("post_id") @db.Char(36)
   title       String
-  view_count  Int        @default(0)
+  view_count  Int       @default(0)
   description String
   content     String
   tags        Tag[]
-  created_at  DateTime   @default(now())
-  updated_at  DateTime   @updatedAt
-  stage       Post_Stage
+  created_at  DateTime  @default(now())
+  updated_at  DateTime  @updatedAt
+  published   Boolean   @default(false)
   user_id     String
-  user        User       @relation(fields: [user_id], references: [id])
+  user        User      @relation(fields: [user_id], references: [id])
   slug        String
   thumbnail   String
   reaction    Json
-}
-
-enum Post_Stage {
-  Draft
-  Publish
+  deleted     DateTime?
 }
 
 model Tag {
   tagName    String   @id
   created_at DateTime @default(now())
   posts      Post[]
+}
+
+model Aspiration_Form {
+  id          String       @id @map("aspiration_form_id")
+  title       String
+  description String?
+  user        User         @relation(fields: [user_id], references: [id])
+  user_id     String
+  fields      Field[]
+  submissions Submission[]
+  created_at  DateTime     @default(now())
+  updated_at  DateTime     @updatedAt
+  is_open     Boolean      @default(true)
+  open_at     DateTime?
+  close_at    DateTime?
+}
+
+enum Field_Type {
+  text
+  longtext
+  radio
+  checkbox
+}
+
+model Field {
+  id          Int                @id @default(autoincrement()) @map("field_id")
+  label       String
+  type        Field_Type
+  required    Boolean            @default(false)
+  form        Aspiration_Form    @relation(fields: [form_id], references: [id])
+  form_id     String
+  options     Field_Option[]
+  submissions Submission_Field[]
+}
+
+model Field_Option {
+  id       Int    @id @default(autoincrement())
+  value    String
+  field    Field  @relation(fields: [field_id], references: [id])
+  field_id Int
+}
+
+model Submission {
+  id         String             @id @default(uuid()) @map("submission_id")
+  form       Aspiration_Form    @relation(fields: [form_id], references: [id])
+  form_id    String
+  user       User               @relation(fields: [user_id], references: [id])
+  user_id    String
+  data       Json
+  created_at DateTime           @default(now())
+  updated_at DateTime           @updatedAt
+  fields     Submission_Field[]
+}
+
+model Submission_Field {
+  id            String     @id @default(uuid())
+  submission    Submission @relation(fields: [submission_id], references: [id])
+  submission_id String
+  field         Field      @relation(fields: [field_id], references: [id])
+  field_id      Int
+  value         String
 }
