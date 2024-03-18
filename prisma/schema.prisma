@@ -54,21 +54,22 @@ model User_Auth {
 }
 
 model Post {
-  id          String    @id @default(uuid()) @map("post_id") @db.Char(36)
-  title       String
-  view_count  Int       @default(0)
-  description String
-  content     String
-  tags        Tag[]
-  created_at  DateTime  @default(now())
-  updated_at  DateTime  @updatedAt
-  published   Boolean   @default(false)
-  user_id     String
-  user        User      @relation(fields: [user_id], references: [id])
-  slug        String
-  thumbnail   String
-  reaction    Json
-  deleted     DateTime?
+  id           String    @id @default(uuid()) @map("post_id") @db.Char(36)
+  title        String
+  view_count   Int       @default(0)
+  description  String
+  content      String
+  tags         Tag[]
+  created_at   DateTime  @default(now())
+  published_at DateTime?
+  updated_at   DateTime  @updatedAt
+  published    Boolean   @default(false)
+  user_id      String
+  user         User      @relation(fields: [user_id], references: [id])
+  slug         String
+  thumbnail    String
+  reaction     Json
+  deleted      DateTime?
 }
 
 model Tag {
