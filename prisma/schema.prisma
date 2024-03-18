@@ -34,14 +34,14 @@ enum Roles {
 }
 
 model User {
-  id               String            @id @default(uuid()) @map("user_id") @db.Char(36)
+  id               String       @id @default(uuid()) @map("user_id") @db.Char(36)
   name             String
-  email            String            @unique
-  role             Roles             @default(Guest)
+  email            String       @unique
+  role             Roles        @default(Guest)
   user_pic         String
   userAuth         User_Auth?
   posts            Post[]
-  forms            Aspiration_Form[]
+  forms            Form[]
   form_submissions Submission[]
 }
 
@@ -54,21 +54,22 @@ model User_Auth {
 }
 
 model Post {
-  id          String    @id @default(uuid()) @map("post_id") @db.Char(36)
-  title       String
-  view_count  Int       @default(0)
-  description String
-  content     String
-  tags        Tag[]
-  created_at  DateTime  @default(now())
-  updated_at  DateTime  @updatedAt
-  published   Boolean   @default(false)
-  user_id     String
-  user        User      @relation(fields: [user_id], references: [id])
-  slug        String
-  thumbnail   String
-  reaction    Json
-  deleted     DateTime?
+  id           String    @id @default(uuid()) @map("post_id") @db.Char(36)
+  title        String
+  view_count   Int       @default(0)
+  description  String
+  content      String
+  tags         Tag[]
+  created_at   DateTime  @default(now())
+  published_at DateTime
+  updated_at   DateTime  @updatedAt
+  published    Boolean   @default(false)
+  user_id      String
+  user         User      @relation(fields: [user_id], references: [id])
+  slug         String
+  thumbnail    String
+  reaction     Json
+  deleted      DateTime?
 }
 
 model Tag {
@@ -77,8 +78,8 @@ model Tag {
   posts      Post[]
 }
 
-model Aspiration_Form {
-  id          String       @id @map("aspiration_form_id")
+model Form {
+  id          String       @id @map("form_id")
   title       String
   description String?
   user        User         @relation(fields: [user_id], references: [id])
@@ -87,6 +88,8 @@ model Aspiration_Form {
   submissions Submission[]
   created_at  DateTime     @default(now())
   updated_at  DateTime     @updatedAt
+  allow_edit  Boolean      @default(false)
+  submit_once Boolean      @default(true)
   is_open     Boolean      @default(true)
   open_at     DateTime?
   close_at    DateTime?
@@ -104,14 +107,14 @@ model Field {
   label       String
   type        Field_Type
   required    Boolean            @default(false)
-  form        Aspiration_Form    @relation(fields: [form_id], references: [id])
+  form        Form               @relation(fields: [form_id], references: [id])
   form_id     String
   options     Field_Option[]
   submissions Submission_Field[]
 }
 
 model Field_Option {
-  id       Int    @id @default(autoincrement())
+  id       Int    @id @default(autoincrement()) @map("field_option_id")
   value    String
   field    Field  @relation(fields: [field_id], references: [id])
   field_id Int
@@ -119,7 +122,7 @@ model Field_Option {
 
 model Submission {
   id         String             @id @default(uuid()) @map("submission_id")
-  form       Aspiration_Form    @relation(fields: [form_id], references: [id])
+  form       Form               @relation(fields: [form_id], references: [id])
   form_id    String
   user       User               @relation(fields: [user_id], references: [id])
   user_id    String
@@ -130,7 +133,7 @@ model Submission {
 }
 
 model Submission_Field {
-  id            String     @id @default(uuid())
+  id            String     @id @default(uuid()) @map("submission_field_id")
   submission    Submission @relation(fields: [submission_id], references: [id])
   submission_id String
   field         Field      @relation(fields: [field_id], references: [id])
