@@ -1,7 +1,7 @@
 import LinkButton from "@/app/_components/global/LinkButton";
 import { SectionWrapper } from "@/app/_components/global/Wrapper";
 import { P, UnderlineTitle } from "@/app/_components/global/Text";
-import Image from "next/image";
+import Image from "@/app/_components/global/Image";
 
 export default function About() {
   return (
@@ -14,7 +14,7 @@ export default function About() {
           height={390}
           className="h-[390px] w-[470px]"
         />
-        <div className="flex w-full max-w-[680px] flex-col gap-[20px]">
+        <div className="flex w-full max-w-[680px] flex-col">
           <div className="mb-11">
             <div className="mb-[42px]">
               <UnderlineTitle lineWidth={142} className="mb-[18px]">
@@ -27,7 +27,13 @@ export default function About() {
               </P>
             </div>
             <div className="flex items-start gap-[34px]">
-              <div className="flex max-w-[324px] gap-[24px] text-wrap">
+              <div className="flex flex-col max-w-[324px] gap-[24px] text-wrap">
+                <Image
+                  src={"/images/logo/osis.png"}
+                  alt={"OSIS SMK Telkom Malang"}
+                  width={43}
+                  height={40}
+                />
                 <div className="flex flex-col gap-[8px]">
                   <span className="text-lg font-bold ">
                     OSIS SMK TELKOM MALANG
@@ -38,7 +44,13 @@ export default function About() {
                   </P>
                 </div>
               </div>
-              <div className="flex max-w-[324px] gap-[24px] text-wrap">
+              <div className="flex flex-col max-w-[324px] gap-[24px] text-wrap">
+                <Image
+                  src={"/images/logo/mpk.png"}
+                  alt={"MPK SMK Telkom Malang"}
+                  width={39.41}
+                  height={39.41}
+                />
                 <div className="flex flex-col gap-[8px]">
                   <span className="text-lg font-bold ">
                     MPK SMK Telkom Malang

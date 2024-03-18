@@ -2,7 +2,55 @@ import { SectionWrapper } from "@/app/_components/global/Wrapper";
 import { H2 } from "@/app/_components/global/Text";
 import ArrowRight from "@/app/_components/icons/ArrowRight";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "@/app/_components/global/Image";
+import { Post } from "@prisma/client";
+
+function NewsFigure({ post }: Readonly<{ post: Post }>) {
+  return (
+    <figure className="w-1/3">
+      <div className="h-[200px] w-full">
+        <Image
+          src={post.thumbnail}
+          alt="wao"
+          unoptimized
+          height={200}
+          width={372}
+          className="h-full w-full object-cover"
+        />
+      </div>
+      <div className="flex flex-col items-start justify-start gap-[26px]">
+        <div>
+          <div className="mb-[16px] mt-[26px] flex gap-[10px]">
+            {}
+            <Link
+              href={"#"}
+              className="rounded-full bg-primary-50 px-[18px] py-1.5"
+            >
+              <span className="text-sm text-primary-400">Lorem ipsum</span>
+            </Link>
+            <Link
+              href={"#"}
+              className="rounded-full bg-primary-50 px-[18px] py-1.5"
+            >
+              <span className="text-sm text-primary-400">Lorem</span>
+            </Link>
+          </div>
+          <div>
+            <span className="text-xl font-bold">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </span>
+          </div>
+        </div>
+        <div className="flex w-full justify-between">
+          <div>
+            <span className="text-base text-black">Lorem Ipsum</span>
+          </div>
+          <span className="text-neutral-500">Feb 28, 2024</span>
+        </div>
+      </div>
+    </figure>
+  );
+}
 
 export default function News() {
   return (
@@ -57,7 +105,6 @@ export default function News() {
                   </span>
                 </div>
               </div>
-
               <div className="flex w-full justify-between">
                 <div>
                   <span className="text-base text-black">Lorem Ipsum</span>

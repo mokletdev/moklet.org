@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Image from "next/image";
+import Image from "@/app/_components/global/Image";
 import Link from "next/link";
 
 export const metadata: Metadata = {

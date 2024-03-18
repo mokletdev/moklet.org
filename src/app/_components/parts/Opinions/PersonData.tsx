@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/app/_components/global/Image";
 
 export interface PersonDataProps {
   name: string;
