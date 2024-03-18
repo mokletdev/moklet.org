@@ -5,7 +5,7 @@ import ArrowIcon from "../icons/ArrowIcon";
 
 export default function Header() {
   return (
-    <section className="min-h-[700px] w-full">
+    <section className="min-h-screen w-full">
       <div className="w-full h-screen left-0 top-0 absolute bg-gradient-to-b from-primary-50 to-white -z-10"></div>
       <div className="relative h-[605px] w-full my-auto">
         <div className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-[75%]">
@@ -13,7 +13,7 @@ export default function Header() {
             <span className="text-primary-400">Jelajahi</span> Kreativitas dan
             Inovasi di SMK Telkom Malang
           </H1>
-          <P className="mx-auto mb-[44px] w-full max-w-[510px] text-center">
+          <P className="mx-auto mb-[80px] w-full max-w-[510px] text-center">
             Portal menuju kegiatan kreatif nan inovatif oleh
             organisasi-organisasi di MOKLET
           </P>
