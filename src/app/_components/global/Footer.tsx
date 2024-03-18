@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
+import Image from "@/app/_components/global/Image";
 
 interface FootOption {
   title: string;

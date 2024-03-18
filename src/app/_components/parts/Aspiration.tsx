@@ -31,7 +31,7 @@ export default function Aspiration() {
           />
           <PrimaryButton>Kirim aspirasi</PrimaryButton>
         </form>
-        <EclipseIcon className="absolute -top-12 left-0" />
+        <EclipseIcon className="absolute -top-12 -left-4" />
         <EclipseIcon className="absolute bottom-36 left-[310px]" />
       </div>
     </SectionWrapper>

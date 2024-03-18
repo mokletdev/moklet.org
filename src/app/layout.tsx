@@ -19,12 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body
-        className={
-          montserrat.className +
-          " bg-opacity-75 bg-gradient-to-b from-primary-50 to-white"
-        }
-      >
+      <body className={montserrat.className}>
         <Navbar />
         <main className="mx-auto w-full max-w-[1192px] px-5 py-[22px]">
           {children}

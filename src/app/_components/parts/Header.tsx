@@ -1,24 +1,14 @@
-import Image from "next/image";
+import Image from "@/app/_components/global/Image";
 import Link from "next/link";
 import { H1, P } from "../global/Text";
 import ArrowIcon from "../icons/ArrowIcon";
 
 export default function Header() {
   return (
-    <section className="min-h-[744px] w-full">
-      <div className="w-full">
-        <Link href={"/"}>
-          <Image
-            src={"/horizontal.svg"}
-            alt="Logo moklet.org"
-            width={120}
-            height={50}
-            className="pointer-events-none h-[50px] w-[130px]"
-          />
-        </Link>
-      </div>
-      <div className="relative h-[605px] w-full">
-        <div className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+    <section className="min-h-[700px] w-full">
+      <div className="w-full h-screen left-0 top-0 absolute bg-gradient-to-b from-primary-50 to-white -z-10"></div>
+      <div className="relative h-[605px] w-full my-auto">
+        <div className="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-[75%]">
           <H1 className="mx-auto mb-[18px] w-full max-w-[794px] text-center">
             <span className="text-primary-400">Jelajahi</span> Kreativitas dan
             Inovasi di SMK Telkom Malang
@@ -39,14 +29,14 @@ export default function Header() {
           width={383}
           height={510}
           alt="Header's image"
-          className="absolute left-0 top-[160px] -z-10"
+          className="absolute left-0 top-[100px] -z-10"
         />
         <Image
           src={"/images/Header-2.png"}
           width={383}
           height={510}
           alt="Header's image"
-          className="absolute right-0 top-[180px] -z-10"
+          className="absolute right-0 top-[80px] -z-10"
         />
       </div>
     </section>

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/app/_components/global/Image";
 import LinkButton from "../global/LinkButton";
 import { H1, P, UnderlineTitle } from "../global/Text";
 import { SectionWrapper } from "../global/Wrapper";
