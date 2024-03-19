@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import Navbar from "./_components/global/Navbar";
-import Footer from "./_components/global/Footer";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -19,13 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={montserrat.className}>
-        <Navbar />
-        <main className="mx-auto w-full max-w-[1192px] px-5 py-[22px]">
-          {children}
-          <Footer />
-        </main>
-      </body>
+      <body className={montserrat.className}>{children}</body>
     </html>
   );
 }
