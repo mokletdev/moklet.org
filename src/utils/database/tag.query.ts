@@ -1,7 +1,7 @@
 import prisma from "@/lib/prisma";
 
-export const findAllTag = () => {
-  return prisma.tag.findMany({
+export const findAllTag = async () => {
+  return await prisma.tag.findMany({
     include: {
       _count: {
         select: { posts: { where: { published: true } } },

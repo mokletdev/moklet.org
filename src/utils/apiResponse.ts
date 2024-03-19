@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+
 const success = (data?: any, message: string = "Success") => {
   return NextResponse.json(
     {

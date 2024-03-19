@@ -6,7 +6,6 @@ export async function GET(
   { params }: { params: { tagName: string } },
 ) {
   const { tagName } = params;
-
   const posts = await findPostByTag(tagName, true);
 
   return success(posts);
