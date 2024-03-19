@@ -9,8 +9,9 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider          = "mysql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 enum Roles {
@@ -58,7 +59,7 @@ model Post {
   title        String
   view_count   Int       @default(0)
   description  String
-  content      String
+  content      String    @db.LongText
   tags         Tag[]
   created_at   DateTime  @default(now())
   published_at DateTime?
@@ -66,7 +67,7 @@ model Post {
   published    Boolean   @default(false)
   user_id      String
   user         User      @relation(fields: [user_id], references: [id])
-  slug         String
+  slug         String    @unique
   thumbnail    String
   reaction     Json
   deleted      DateTime?
@@ -121,7 +122,7 @@ model Field_Option {
 }
 
 model Submission {
-  id         String             @id @default(uuid()) @map("submission_id")
+  id         String             @id @default(uuid()) @map("submission_id") @db.Char(36)
   form       Form               @relation(fields: [form_id], references: [id])
   form_id    String
   user       User               @relation(fields: [user_id], references: [id])
@@ -133,7 +134,7 @@ model Submission {
 }
 
 model Submission_Field {
-  id            String     @id @default(uuid()) @map("submission_field_id")
+  id            String     @id @default(uuid()) @map("submission_field_id") @db.Char(36)
   submission    Submission @relation(fields: [submission_id], references: [id])
   submission_id String
   field         Field      @relation(fields: [field_id], references: [id])
