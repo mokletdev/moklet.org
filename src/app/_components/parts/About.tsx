@@ -1,25 +1,32 @@
 import LinkButton from "@/app/_components/global/LinkButton";
 import { SectionWrapper } from "@/app/_components/global/Wrapper";
-import { P, UnderlineTitle } from "@/app/_components/global/Text";
+import { H2, P } from "@/app/_components/global/Text";
 import Image from "@/app/_components/global/Image";
 
 export default function About() {
   return (
     <SectionWrapper id="tentang">
       <div className="flex flex-col gap-[72px] md:gap-0 md:flex-row w-full justify-between">
-        <Image
-          src={"/images/About.png"}
-          alt="About"
-          width={470}
-          height={390}
-          className="h-[390px] w-full md:w-[470px]"
-        />
+        <div className="w-full md:w-1/2">
+          <Image
+            src={"/images/About.png"}
+            alt="About"
+            width={470}
+            height={390}
+            className="w-full"
+          />
+        </div>
         <div className="flex w-full max-w-[680px] flex-col">
           <div className="mb-11">
             <div className="mb-[42px]">
-              <UnderlineTitle lineWidth={142} className="mb-[18px]">
-                Jelajahi Berbagai Organisasi & Sub-organ di Moklet
-              </UnderlineTitle>
+              <div className="relative">
+                <H2 className={"z-10 font-bold text-black"}>
+                  Kepemimpinan Siswa di Moklet melalui OSIS dan MPK
+                </H2>
+                <div
+                  className={`absolute left-[3px] top-[17px] md:top-[28px] -z-10 h-[16px] bg-primary-100 w-[190px] md:w-[288px]`}
+                ></div>
+              </div>
               <P>
                 moklet.org merupakan sebuah portal informasi yang berisikan
                 kegiatan-kegiatan yang dilakukan oleh organisasi dan
