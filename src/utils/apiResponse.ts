@@ -8,6 +8,7 @@ const success = (data?: any, message: string = "Success") => {
     },
     { status: 200 },
   );
+};
 
 const created = (data?: any, message: string = "Success create") => {
   return NextResponse.json(
