@@ -6,13 +6,13 @@ import Image from "@/app/_components/global/Image";
 export default function About() {
   return (
     <SectionWrapper id="tentang">
-      <div className="flex w-full justify-between">
+      <div className="flex flex-col gap-[72px] md:gap-0 md:flex-row w-full justify-between">
         <Image
           src={"/images/About.png"}
           alt="About"
           width={470}
           height={390}
-          className="h-[390px] w-[470px]"
+          className="h-[390px] w-full md:w-[470px]"
         />
         <div className="flex w-full max-w-[680px] flex-col">
           <div className="mb-11">
@@ -26,8 +26,8 @@ export default function About() {
                 sub-organisasi di Moklet (SMK Telkom Malang).
               </P>
             </div>
-            <div className="flex items-start gap-[34px]">
-              <div className="flex flex-col max-w-[324px] gap-[24px] text-wrap">
+            <div className="flex flex-col sm:flex-row items-start gap-[34px]">
+              <div className="flex flex-col w-full sm:w-1/2 gap-[24px] text-wrap">
                 <Image
                   src={"/images/logo/osis.png"}
                   alt={"OSIS SMK Telkom Malang"}
@@ -44,7 +44,7 @@ export default function About() {
                   </P>
                 </div>
               </div>
-              <div className="flex flex-col max-w-[324px] gap-[24px] text-wrap">
+              <div className="flex flex-col w-full sm:w-1/2 gap-[24px] text-wrap">
                 <Image
                   src={"/images/logo/mpk.png"}
                   alt={"MPK SMK Telkom Malang"}
