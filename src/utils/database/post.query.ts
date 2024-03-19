@@ -5,6 +5,7 @@ export const findAllPost = (filter?: Prisma.PostWhereInput) => {
   return prisma.post.findMany({
     where: filter,
     orderBy: { published_at: "desc" },
+    include: { tags: true, user: { select: { name: true, user_pic: true } } },
   });
 };
 
@@ -12,6 +13,7 @@ export const findNewestPost = (limit: number = 5) => {
   return prisma.post.findMany({
     orderBy: { published_at: "desc" },
     take: limit,
+    include: { tags: true, user: { select: { name: true, user_pic: true } } },
   });
 };
 
@@ -19,22 +21,15 @@ export const findPopularPost = (limit: number = 10) => {
   return prisma.post.findMany({
     orderBy: { published_at: "desc", view_count: "desc" },
     take: limit,
+    include: { tags: true, user: { select: { name: true, user_pic: true } } },
   });
-};
-
-export const findPostByTag = async (tagName: string) => {
-  const findTag = await prisma.tag.findUnique({
-    where: { tagName },
-    select: { posts: { orderBy: { published_at: "desc" } } },
-  });
-
-  return findTag?.posts;
 };
 
 export const findPost = (filter: Prisma.PostWhereInput) => {
-  return prisma.post.findMany({
+  return prisma.post.findFirst({
     where: filter,
     orderBy: { published_at: "desc" },
+    include: { tags: true, user: { select: { name: true, user_pic: true } } },
   });
 };
 export const createPost = (data: Prisma.PostUncheckedCreateInput) => {

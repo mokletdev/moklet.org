@@ -71,7 +71,7 @@ CREATE TABLE `Field_Option` (
 
 -- CreateTable
 CREATE TABLE `Submission` (
-    `submission_id` VARCHAR(191) NOT NULL,
+    `submission_id` CHAR(36) NOT NULL,
     `form_id` VARCHAR(191) NOT NULL,
     `user_id` VARCHAR(191) NOT NULL,
     `data` JSON NOT NULL,
@@ -83,7 +83,7 @@ CREATE TABLE `Submission` (
 
 -- CreateTable
 CREATE TABLE `Submission_Field` (
-    `id` VARCHAR(191) NOT NULL,
+    `id` CHAR(36) NOT NULL,
     `submission_id` VARCHAR(191) NOT NULL,
     `field_id` INTEGER NOT NULL,
     `value` VARCHAR(191) NOT NULL,
