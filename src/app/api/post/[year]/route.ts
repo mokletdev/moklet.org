@@ -1,7 +1,10 @@
 import { success } from "@/utils/apiResponse";
 import { findAllPost } from "@/utils/database/post.query";
 
-export async function GET({ params }: { params: { year: string } }) {
+export async function GET(
+  req: Request,
+  { params }: { params: { year: string } },
+) {
   const { year } = params;
 
   const posts = await findAllPost({
