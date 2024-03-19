@@ -11,7 +11,7 @@ export default function Opinions() {
             Kata Mereka Tentang Organisasi dan Sub-Organisasi Moklet
           </H2>
           <div
-            className={`absolute left-[3px] top-[17px] md:top-[28px] -z-10 h-[16px] bg-primary-100 w-[154px] md:w-[288px]`}
+            className={`absolute left-[3px] top-[17px] md:top-[28px] -z-10 h-[16px] bg-primary-100 w-[154px] md:w-[231px]`}
           ></div>
         </div>
         <div className="mt-[54px] flex flex-col md:flex-row gap-[18px] w-full">
