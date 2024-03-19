@@ -1,4 +1,4 @@
-import { UnderlineTitle } from "../../global/Text";
+import { H2 } from "../../global/Text";
 import { SectionWrapper } from "../../global/Wrapper";
 import Saying from "./Saying";
 
@@ -6,9 +6,14 @@ export default function Opinions() {
   return (
     <SectionWrapper id="pendapat">
       <div className="flex flex-col justify-center">
-        <UnderlineTitle lineWidth={"232px"}>
-          Kata Mereka Tentang Organisasi dan Sub-Organisasi Moklet
-        </UnderlineTitle>
+        <div className="relative">
+          <H2 className={"z-10 font-bold text-black"}>
+            Kata Mereka Tentang Organisasi dan Sub-Organisasi Moklet
+          </H2>
+          <div
+            className={`absolute left-[3px] top-[17px] md:top-[28px] -z-10 h-[16px] bg-primary-100 w-[154px] md:w-[288px]`}
+          ></div>
+        </div>
         <div className="mt-[54px] flex flex-col md:flex-row gap-[18px] w-full">
           <div className="flex flex-col gap-[24px] w-full md:w-[75%]">
             <div className="flex flex-col md:flex-row gap-[18px] w-full">

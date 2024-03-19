@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
           <div></div>
         </div>
-        <div className="flex flex-col sm:flex-row text-black w-full gap-[52px] md:gap-0 md:w-[58%]">
+        <div className="flex flex-col md:flex-row text-black w-full gap-[52px] md:gap-0 md:w-[58%]">
           <div className="flex flex-col gap-[22px] w-full md:w-1/4">
             <h3 className="font-normal text-neutral-500">Menu Utama</h3>
             <div className="flex flex-col gap-[14px] ">

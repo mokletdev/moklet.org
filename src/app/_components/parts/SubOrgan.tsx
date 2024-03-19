@@ -1,6 +1,6 @@
 import Image from "@/app/_components/global/Image";
 import LinkButton from "../global/LinkButton";
-import { H1, P, UnderlineTitle } from "../global/Text";
+import { H1, H2, P } from "../global/Text";
 import { SectionWrapper } from "../global/Wrapper";
 
 function SubOrganCount({
@@ -18,31 +18,38 @@ function SubOrganCount({
 export default function SubOrgan() {
   return (
     <SectionWrapper id="sub-organ">
-      <div className="flex flex-col-reverse md:flex-row gap-[72px] md:gap-0 w-full items-center justify-between">
+      <div className="flex flex-col-reverse md:flex-row gap-[72px] md:gap-0 w-full items-start md:items-center justify-start md:justify-between">
         <div className="w-full max-w-3xl">
           <div className="mb-[42px]">
-            <UnderlineTitle lineWidth="330px" className="mb-[18px]">
-              Mengembangkan Bakat di Sub-organ
-            </UnderlineTitle>
+            <div className="relative">
+              <H2 className={"z-10 font-bold text-black"}>
+                Mengembangkan Bakat di Sub-organ
+              </H2>
+              <div
+                className={`absolute left-[3px] top-[17px] md:top-[28px] -z-10 h-[16px] bg-primary-100 w-[220px] md:w-[288px]`}
+              ></div>
+            </div>
             <P>
               Temukan potensi terbaik dalam pengembangan bakat melalui
               Sub-Organisasi OSIS Moklet yang inspiratif dan beragam.
             </P>
           </div>
-          <div className="mb-11 flex flex-col sm:flex-row w-full items-center gap-[62px]">
+          <div className="mb-11 flex flex-col sm:flex-row w-full md:items-center gap-[62px]">
             <SubOrganCount count={3} title="Bidang Olahraga" />
             <SubOrganCount count={2} title="Bidang Seni & Bahasa" />
             <SubOrganCount count={5} title="Bidang Lainnya" />
           </div>
           <LinkButton href="#">Explorasi lebih jauh</LinkButton>
         </div>
-        <Image
-          src={"/images/Sub-organ.png"}
-          width={470}
-          height={390}
-          alt="Sub-organ"
-          className="h-[390px] w-[470px]"
-        />
+        <div className="w-full md:w-1/2">
+          <Image
+            src={"/images/Sub-organ.png"}
+            width={470}
+            height={390}
+            alt="Sub-organ"
+            className="w-full"
+          />
+        </div>
       </div>
     </SectionWrapper>
   );
