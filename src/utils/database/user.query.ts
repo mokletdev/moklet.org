@@ -6,7 +6,7 @@ export const findAllUsers = async (filter?: Prisma.UserWhereInput) => {
 };
 
 export const findUser = async (filter: Prisma.UserWhereInput) => {
-  return await prisma.user.findMany({ where: filter });
+  return await prisma.user.findFirst({ where: filter });
 };
 
 export const findUserAuth = async (email: string) => {
