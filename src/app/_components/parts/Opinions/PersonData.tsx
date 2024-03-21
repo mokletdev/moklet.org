@@ -22,7 +22,9 @@ export default function PersonData({
         unoptimized
       />
       <div className="flex flex-col">
-        <span className="text-[18px] sm:text-xl font-bold text-primary-400">{name}</span>
+        <span className="text-[18px] sm:text-xl font-bold text-primary-400">
+          {name}
+        </span>
         <span className="text-base font-normal text-black">{role}</span>
       </div>
     </div>
