@@ -1,7 +1,28 @@
 import prisma from "@/lib/prisma";
-import { Prisma } from "@prisma/client";
+import { Post, Prisma } from "@prisma/client";
+import { paginator } from "../paginator";
 
-export const findAllPost = async (filter?: Prisma.PostWhereInput) => {
+const paginate = paginator({ perPage: 5 });
+
+export const findAllPosts = async (
+  filter?: Prisma.PostWhereInput,
+  page?: number,
+) => {
+  if (page) {
+    return await paginate<Post, Prisma.PostFindManyArgs>(
+      prisma.post,
+      { page },
+      {
+        where: filter,
+        orderBy: { published_at: "desc" },
+        include: {
+          tags: true,
+          user: { select: { name: true, user_pic: true } },
+        },
+      },
+    );
+  }
+
   return await prisma.post.findMany({
     where: filter,
     orderBy: { published_at: "desc" },

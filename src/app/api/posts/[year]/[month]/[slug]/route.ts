@@ -6,7 +6,7 @@ type params = { year: string; month: string; slug: string };
 export async function GET(req: Request, { params }: { params: params }) {
   const { year, month, slug } = params;
 
-  const posts = await findPost({
+  const post = await findPost({
     published_at: {
       gte: new Date(`${year}-${month}-01`),
       lte: new Date(`${year}-${month}-31`),
@@ -14,7 +14,7 @@ export async function GET(req: Request, { params }: { params: params }) {
     slug,
   });
 
-  if (!posts) return notFound("Post not found");
+  if (!post) return notFound("Post not found");
 
-  return success(posts);
+  return success(post);
 }
