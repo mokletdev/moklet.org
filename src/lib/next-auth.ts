@@ -11,6 +11,7 @@ import prisma from "./prisma";
 import { type DefaultSession } from "next-auth";
 import type { DefaultJWT } from "next-auth/jwt";
 import { createHash } from "crypto";
+import { getServerSession } from "next-auth";
 
 declare module "next-auth" {
   /**
@@ -150,3 +151,5 @@ export const authOptions: AuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
+
+export const nextGetServerSession = () => getServerSession(authOptions);

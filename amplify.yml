@@ -1,0 +1,18 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - env | grep -e DATABASE_URL -e SHADOW_DATABASE_URL -e GOOGLE_CLIENT_ID -e GOOGLE_CLIENT_SECRET -e NEXTAUTH_SECRET -e NEXTAUTH_URL >> .env.production
+        - npm run build
+  artifacts:
+    baseDirectory: .next
+    files:
+      - "**/*"
+  cache:
+    paths:
+      - .next/cache/**/*
+      - node_modules/**/*
