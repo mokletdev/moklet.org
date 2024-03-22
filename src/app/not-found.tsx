@@ -1,10 +1,8 @@
 import { Metadata } from "next";
-import { SectionWrapper } from "./_components/global/Wrapper";
-import PrimaryLinkButton from "./_components/global/LinkButton";
-import Navbar from "./_components/global/Navbar";
-import Footer from "./_components/global/Footer";
 import Image from "./_components/global/Image";
-import { H1, H2, H3, H4, P } from "./_components/global/Text";
+import PrimaryLinkButton from "./_components/global/LinkButton";
+import { H1, P } from "./_components/global/Text";
+import { SectionWrapper } from "./_components/global/Wrapper";
 
 export const metadata: Metadata = {
   title: "Not Found",
@@ -13,7 +11,6 @@ export const metadata: Metadata = {
 export default function NotFound() {
   return (
     <>
-      <Navbar />
       <main className="mx-auto w-full max-w-[1192px] px-5 py-[22px]">
         <SectionWrapper id="not-found">
           <div className="flex flex-col justify-center items-center gap-20">
@@ -35,7 +32,6 @@ export default function NotFound() {
             </div>
           </div>
         </SectionWrapper>
-        <Footer />
       </main>
     </>
   );
