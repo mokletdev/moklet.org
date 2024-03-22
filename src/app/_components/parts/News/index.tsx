@@ -3,7 +3,7 @@ import { SectionWrapper } from "@/app/_components/global/Wrapper";
 import ArrowRight from "@/app/_components/icons/ArrowRight";
 import { postsSeeder } from "@/seeders/posts.seeder";
 import Link from "next/link";
-import { NewsFigure } from "./NewsFigure";
+import { NewsFigure } from "../../global/NewsFigure";
 
 export default function News() {
   return (

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "../../global/Image";
+import Image from "./Image";
 import { PostWithTagsAndUser } from "@/types/entityRelations";
 import { stringifyDate } from "@/utils/atomics";
 
