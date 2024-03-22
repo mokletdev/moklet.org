@@ -25,3 +25,11 @@ export function stringifyDate(date: Date) {
   return `${month} ${day}, ${year}`;
 }
 //#endregion
+
+export function isInteger(value: string) {
+  return /^\d+$/.test(value);
+}
+
+export function validatePage(page: string) {
+  return isInteger(page) && parseInt(page) > 0;
+}
