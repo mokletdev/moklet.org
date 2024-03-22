@@ -6,13 +6,8 @@ frontend:
         - npm ci
     build:
       commands:
+        - env | grep -e DATABASE_URL -e SHADOW_DATABASE_URL -e GOOGLE_CLIENT_ID -e GOOGLE_CLIENT_SECRET -e NEXTAUTH_SECRET -e NEXTAUTH_URL >> .env.production
         - npm run build
-        - DATABASE_URL=${DATABASE_URL}
-        - SHADOW_DATABASE_URL=${SHADOW_DATABASE_URL}
-        - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
-        - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
-        - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
-        - NEXTAUTH_URL=${NEXTAUTH_URL}
   artifacts:
     baseDirectory: .next
     files:
