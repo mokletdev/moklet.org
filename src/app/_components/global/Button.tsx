@@ -4,7 +4,7 @@ interface ButtonProps {
   children?: ReactNode;
   type?: "button" | "reset" | "submit";
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  isDisabled: boolean;
+  isDisabled?: boolean;
 }
 
 export function PrimaryButton({
@@ -68,7 +68,9 @@ export function TertiaryButton({
     >
       <span
         className={`text-base ${
-          isDisabled ? "text-neutral-500" : "text-white hover:text-primary-400"
+          isDisabled
+            ? "text-neutral-500"
+            : "text-black hover:text-primary-400 transition-all"
         }`}
       >
         {children}

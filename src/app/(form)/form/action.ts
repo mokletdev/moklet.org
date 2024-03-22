@@ -37,6 +37,11 @@ export const submitForm = async (data: submitFormData) => {
   const form = await findForm({ id: form_id, is_open: true });
 
   if (!form) throw new Error("Form not found!");
+  if (
+    (form.open_at && new Date(form.open_at).getTime() > new Date().getTime()) ||
+    (form.close_at && new Date(form.close_at).getTime() < new Date().getTime())
+  )
+    throw new Error("Form closed!");
 
   if (form.submit_once) {
     const submission = await findSubmission({ user_id, form_id });
