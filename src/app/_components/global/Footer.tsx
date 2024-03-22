@@ -49,7 +49,12 @@ export default function Footer() {
             <h3 className="font-normal text-neutral-500">Menu Utama</h3>
             <div className="flex flex-col gap-[14px] ">
               {footOptions.map((footOption) => (
-                <TertiaryLinkButton href={footOption.href} key={footOption.title}>{footOption.title}</TertiaryLinkButton>
+                <TertiaryLinkButton
+                  href={footOption.href}
+                  key={footOption.title}
+                >
+                  {footOption.title}
+                </TertiaryLinkButton>
               ))}
             </div>
           </div>
@@ -57,7 +62,12 @@ export default function Footer() {
             <h3 className="font-normal text-neutral-500">Menu Utama</h3>
             <div className="flex flex-col gap-[14px] ">
               {footOptions.map((footOption) => (
-                <TertiaryLinkButton href={footOption.href} key={footOption.title}>{footOption.title}</TertiaryLinkButton>
+                <TertiaryLinkButton
+                  href={footOption.href}
+                  key={footOption.title}
+                >
+                  {footOption.title}
+                </TertiaryLinkButton>
               ))}
             </div>
           </div>
@@ -65,7 +75,12 @@ export default function Footer() {
             <h3 className="font-normal text-neutral-500">Menu Utama</h3>
             <div className="flex flex-col gap-[14px] ">
               {footOptions.map((footOption) => (
-                <TertiaryLinkButton href={footOption.href} key={footOption.title}>{footOption.title}</TertiaryLinkButton>
+                <TertiaryLinkButton
+                  href={footOption.href}
+                  key={footOption.title}
+                >
+                  {footOption.title}
+                </TertiaryLinkButton>
               ))}
             </div>
           </div>
@@ -73,7 +88,9 @@ export default function Footer() {
             <h3 className="font-normal text-neutral-500">Term Of Service</h3>
             <div className="flex flex-col gap-[14px] ">
               {footToS.map((footToS) => (
-                <TertiaryLinkButton href={footToS.href} key={footToS.title}>{footToS.title}</TertiaryLinkButton>
+                <TertiaryLinkButton href={footToS.href} key={footToS.title}>
+                  {footToS.title}
+                </TertiaryLinkButton>
               ))}
             </div>
           </div>
