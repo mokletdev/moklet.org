@@ -1,4 +1,4 @@
-import { success } from "@/utils/apiResponse";
+import { internalServerError, success } from "@/utils/apiResponse";
 import { findPostByTag } from "@/utils/database/tag.query";
 
 export async function GET(
@@ -6,7 +6,12 @@ export async function GET(
   { params }: { params: { tagName: string } },
 ) {
   const { tagName } = params;
-  const posts = await findPostByTag(tagName, true);
 
-  return success(posts);
+  try {
+    const posts = await findPostByTag(tagName, true);
+
+    return success(posts);
+  } catch (error) {
+    return internalServerError([]);
+  }
 }
