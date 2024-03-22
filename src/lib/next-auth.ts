@@ -40,10 +40,11 @@ declare module "next-auth/jwt" {
 }
 
 export const authOptions: AuthOptions = {
-  // pages: {
-  //   signIn: "/auth/login",
-  //   newUser: "/auth/register",
-  // },
+  theme: {
+    colorScheme: "light",
+    brandColor: "#E04E4E",
+    logo: "/horizontal.svg",
+  },
   session: {
     strategy: "jwt",
   },
@@ -54,7 +55,7 @@ export const authOptions: AuthOptions = {
         email: {
           label: "Email",
           type: "email",
-          placeholder: "user@email.com",
+          placeholder: "user@student.smktelkom-mlg.sch.id",
         },
         password: {
           label: "Password",
@@ -63,7 +64,6 @@ export const authOptions: AuthOptions = {
         },
       },
       async authorize(credentials) {
-        console.log(credentials);
         let findUser = await prisma.user.findUnique({
           where: { email: credentials?.email },
           include: { userAuth: true },
@@ -98,7 +98,12 @@ export const authOptions: AuthOptions = {
         : url;
       return redirectUrl;
     },
-    async signIn({ user }) {
+    async signIn({ user, profile, account }) {
+      if (
+        account?.provider == "google" &&
+        !profile?.email?.endsWith("smktelkom-mlg.sch.id")
+      )
+        return false;
       if (user.email) {
         let userdb = await findUser({ email: user.email });
         if (!userdb) {
@@ -116,6 +121,7 @@ export const authOptions: AuthOptions = {
           });
         }
       }
+
       return true;
     },
     async jwt({ token, user }) {
@@ -129,7 +135,7 @@ export const authOptions: AuthOptions = {
       return token;
     },
     async session({ session, token }) {
-      if (session.user) {
+      if (token.email && session.user) {
         session.user.role = token?.role || "Guest";
         session.user.id = token?.id!;
         session.user.user_pic = token?.user_pic!;
