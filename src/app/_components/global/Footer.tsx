@@ -1,6 +1,7 @@
 import Image from "@/app/_components/global/Image";
 import Link from "next/link";
 import { P } from "./Text";
+import { TertiaryLinkButton } from "./LinkButton";
 
 interface FootOption {
   title: string;
@@ -48,11 +49,12 @@ export default function Footer() {
             <h3 className="font-normal text-neutral-500">Menu Utama</h3>
             <div className="flex flex-col gap-[14px] ">
               {footOptions.map((footOption) => (
-                <Link href={footOption.href} key={footOption.title}>
-                  <h3 className="transition-all duration-300 hover:text-neutral-400">
-                    {footOption.title}
-                  </h3>
-                </Link>
+                <TertiaryLinkButton
+                  href={footOption.href}
+                  key={footOption.title}
+                >
+                  {footOption.title}
+                </TertiaryLinkButton>
               ))}
             </div>
           </div>
@@ -60,11 +62,12 @@ export default function Footer() {
             <h3 className="font-normal text-neutral-500">Menu Utama</h3>
             <div className="flex flex-col gap-[14px] ">
               {footOptions.map((footOption) => (
-                <Link href={footOption.href} key={footOption.title}>
-                  <h3 className="transition-all duration-300 hover:text-neutral-400">
-                    {footOption.title}
-                  </h3>
-                </Link>
+                <TertiaryLinkButton
+                  href={footOption.href}
+                  key={footOption.title}
+                >
+                  {footOption.title}
+                </TertiaryLinkButton>
               ))}
             </div>
           </div>
@@ -72,11 +75,12 @@ export default function Footer() {
             <h3 className="font-normal text-neutral-500">Menu Utama</h3>
             <div className="flex flex-col gap-[14px] ">
               {footOptions.map((footOption) => (
-                <Link href={footOption.href} key={footOption.title}>
-                  <h3 className="transition-all duration-300 hover:text-neutral-400">
-                    {footOption.title}
-                  </h3>
-                </Link>
+                <TertiaryLinkButton
+                  href={footOption.href}
+                  key={footOption.title}
+                >
+                  {footOption.title}
+                </TertiaryLinkButton>
               ))}
             </div>
           </div>
@@ -84,11 +88,9 @@ export default function Footer() {
             <h3 className="font-normal text-neutral-500">Term Of Service</h3>
             <div className="flex flex-col gap-[14px] ">
               {footToS.map((footToS) => (
-                <Link href={footToS.href} key={footToS.title}>
-                  <h3 className="transition-all duration-300 hover:text-neutral-400">
-                    {footToS.title}
-                  </h3>
-                </Link>
+                <TertiaryLinkButton href={footToS.href} key={footToS.title}>
+                  {footToS.title}
+                </TertiaryLinkButton>
               ))}
             </div>
           </div>

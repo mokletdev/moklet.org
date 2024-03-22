@@ -1,5 +1,5 @@
 import Image from "@/app/_components/global/Image";
-import LinkButton from "../global/LinkButton";
+import PrimaryLinkButton from "../global/LinkButton";
 import { H1, H2, P } from "../global/Text";
 import { SectionWrapper } from "../global/Wrapper";
 
@@ -39,7 +39,7 @@ export default function SubOrgan() {
             <SubOrganCount count={2} title="Bidang Seni & Bahasa" />
             <SubOrganCount count={5} title="Bidang Lainnya" />
           </div>
-          <LinkButton href="#">Explorasi lebih jauh</LinkButton>
+          <PrimaryLinkButton href="#">Explorasi lebih jauh</PrimaryLinkButton>
         </div>
         <div className="w-full md:w-1/2">
           <Image

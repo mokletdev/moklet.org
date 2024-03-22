@@ -29,7 +29,7 @@ export default function Aspiration() {
             placeholder="Bagikan impian atau aspirasi Anda untuk MPK Moklet"
             className="mb-[44px] w-full"
           />
-          <PrimaryButton>Kirim aspirasi</PrimaryButton>
+          <PrimaryButton isDisabled={false}>Kirim aspirasi</PrimaryButton>
         </form>
         <EclipseIcon className="absolute -top-[102px] -left-20 hidden md:block" />
         <EclipseIcon className="absolute bottom-24 left-[310px] hidden md:block" />
