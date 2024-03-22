@@ -23,11 +23,14 @@ export default function Aspiration() {
             label="judul"
             placeholder="Masukkan judul aspirasi"
             className="mb-6 w-full"
+            name="judul"
+            type="text"
           />
           <TextArea
             label="aspirasi"
             placeholder="Bagikan impian atau aspirasi Anda untuk MPK Moklet"
             className="mb-[44px] w-full"
+            name="aspirasi"
           />
           <PrimaryButton isDisabled={false}>Kirim aspirasi</PrimaryButton>
         </form>
