@@ -1,3 +1,13 @@
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Form Moklet.org",
+    template: "%s | Form Moklet.org",
+  },
+  description: "Moklet.org form application",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{

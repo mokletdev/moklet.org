@@ -29,6 +29,7 @@ export function TextField({
   label,
   placeholder,
   className,
+  name,
   required,
   type = "text",
   handleChange,
@@ -66,6 +67,7 @@ export function TextArea({
   placeholder,
   className,
   required,
+  name,
 }: Readonly<InputProps>) {
   return (
     <div className={"flex flex-col gap-2 " + className}>
@@ -80,7 +82,7 @@ export function TextArea({
         </label>
       )}
       <textarea
-        name={label}
+        name={name}
         placeholder={placeholder}
         required={required}
         className="h-[144px] rounded-xl border border-neutral-500 px-[18px] active:border-black hover:border-black py-[14px] text-black placeholder-neutral-500 focus:outline-none transition-all duration-500"
@@ -151,7 +153,7 @@ export function CheckboxField({
         </label>
       )}
       {options &&
-        options.map((option: any) => (
+        options.map((option) => (
           <div className="flex gap-x-4 cursor-pointer" key={option.id}>
             <input
               type="checkbox"
@@ -160,7 +162,7 @@ export function CheckboxField({
               checked={value?.includes(option.value)}
               className="w-4 h-4 cursor-pointer bg-white text-primary-500 accent-primary-500 shrink-0 mt-0.5 border-gray-200 rounded focus:ring-primary-500 disabled:opacity-50 disabled:pointer-events-none transition-all"
               id={option.id}
-              required={required}
+              data-required={required}
             />
             <label htmlFor={option.id} className="cursor-pointer text-sm ms-2">
               {option.value}
