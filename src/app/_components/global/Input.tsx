@@ -30,6 +30,8 @@ export function TextField({
   className,
   required,
   type = "text",
+  handleChange,
+  value,
 }: Readonly<TextFieldProps>) {
   return (
     <div className={"flex flex-col gap-2 " + className}>
@@ -46,7 +48,9 @@ export function TextField({
       <input
         type={type}
         name={label}
+        value={value}
         placeholder={placeholder}
+        onChange={handleChange}
         className="rounded-xl border border-neutral-500 px-[18px] active:border-black hover:border-black py-[14px] text-black placeholder-neutral-500 focus:outline-none transition-all duration-500"
         required={required}
       />
