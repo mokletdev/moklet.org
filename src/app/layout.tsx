@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { NextAuthProvider } from "./_components/main/NextAuthProvider";
+import TopLoader from "./_components/main/TopLoader";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -18,6 +19,11 @@ export const metadata: Metadata = {
   publisher: "SMK Telkom Malang",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,7 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={montserrat.className}>
-        <NextAuthProvider>{children}</NextAuthProvider>
+        <NextAuthProvider>
+          <TopLoader />
+          {children}
+        </NextAuthProvider>
       </body>
     </html>
   );
