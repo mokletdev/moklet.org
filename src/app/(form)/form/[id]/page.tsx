@@ -1,38 +1,58 @@
-import { PrimaryButton, TertiaryButton } from "@/app/_components/global/Button";
+import { PrimaryButton } from "@/app/_components/global/Button";
 import {
   CheckboxField,
   RadioField,
   TextArea,
   TextField,
 } from "@/app/_components/global/Input";
-import { H1, H2, P, Pblk } from "@/app/_components/global/Text";
+import { H2, P } from "@/app/_components/global/Text";
 import React from "react";
 import { findForm } from "@/utils/database/form.query";
 import { nextGetServerSession } from "@/lib/next-auth";
-import { redirect } from "next/navigation";
+import { redirect, RedirectType, notFound } from "next/navigation";
 import Link from "next/link";
 import { findSubmission } from "@/utils/database/submission.query";
+import ForbiddenForm from "../_components/ForbiddenForm";
+import { Metadata } from "next";
 
-const page = async ({ params }: { params: { id: string } }) => {
+type Props = {
+  params: { id: string };
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  var form = await findForm({ id: params.id });
+
+  return {
+    title: form?.title ?? "Not Found",
+    description: form?.description,
+  };
+}
+
+const page = async ({ params }: Props) => {
   const session = await nextGetServerSession();
-  if (!session) return redirect("/auth/signin?callbackUrl=/form/" + params.id);
+  if (!session)
+    return redirect(
+      "/auth/signin?callbackUrl=/form/" + params.id,
+      RedirectType.replace,
+    );
 
   var form = await findForm({ id: params.id });
 
-  if (!form) return <H1>Not found</H1>;
-  if (!form.is_open) return <H1>Formulir tidak dapat diakses!</H1>;
+  if (!form) return notFound();
+  if (!form.is_open) return <ForbiddenForm />;
   if (
     (form.open_at && new Date(form.open_at).getTime() > new Date().getTime()) ||
     (form.close_at && new Date(form.close_at).getTime() < new Date().getTime())
   )
-    return <H1>Formulir tidak dapat diakses!</H1>;
+    return <ForbiddenForm />;
 
   if (form.submit_once) {
     const submission = await findSubmission({
       user_id: session.user?.id,
       form_id: params.id,
     });
-    if (submission) return <H1>Already submit</H1>;
+    if (submission)
+      return <ForbiddenForm message="Anda sudah menjawab formulir ini." />;
   }
 
   return (
