@@ -5,10 +5,10 @@ import { IoIosPodium } from "react-icons/io";
 
 type navbarParam = {
   nav: boolean;
-//  session: Session | null;
+  //  session: Session | null;
 };
 // export function Sidebar({nav, session}: navbarParam) {
-export function Sidebar({nav}: navbarParam) {
+export function Sidebar({ nav }: navbarParam) {
   return (
     <aside
       id="sidebar"
@@ -157,28 +157,28 @@ export function Sidebar({nav}: navbarParam) {
                 </div>
               </li>
               {/* {session?.user?.role == "SuperAdmin" ? ( */}
-                <li>
-                  <Link
-                    href="/admin/users"
-                    className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 "
+              <li>
+                <Link
+                  href="/admin/users"
+                  className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 "
+                >
+                  <svg
+                    className="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <svg
-                      className="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <span className="ml-3 flex-1 whitespace-nowrap">
-                      Admin Users
-                    </span>
-                  </Link>
-                </li>
+                    <path
+                      fillRule="evenodd"
+                      d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span className="ml-3 flex-1 whitespace-nowrap">
+                    Admin Users
+                  </span>
+                </Link>
+              </li>
               {/* ) : null} */}
             </ul>
           </div>
