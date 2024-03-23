@@ -1,8 +1,6 @@
-import Image from "@/app/_components/global/Image";
-import Link from "next/link";
+import News from "./components/News";
 import { SearchBar } from "./components/SearchBar";
 import TopNews from "./components/TopNews";
-import News from "./components/News";
 
 export default function Berita({
   searchParams,

@@ -25,7 +25,7 @@ export default function PageNav({
   return (
     <div className="flex gap-[34px] justify-center items-center">
       <PrimaryLinkButton
-        href={`/berita?page=${currentPage <= 0 ? currentPage : currentPage + 1}`}
+        href={`/berita?page=${currentPage <= 1 ? currentPage : currentPage - 1}`}
       >
         <ArrowLeft />
       </PrimaryLinkButton>

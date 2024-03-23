@@ -5,22 +5,21 @@ import { PostWithTagsAndUser } from "@/types/entityRelations";
 import { findAllPosts } from "@/utils/database/post.query";
 import { PaginatedResult } from "@/utils/paginator";
 import PageNav from "./parts/PageNav";
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 export default async function News({
   searchParams,
 }: {
   searchParams: { [key: string]: string | undefined };
 }) {
-  const page = parseInt(searchParams.page as string);
+  const page = parseInt(searchParams.page ?? "1");
 
   const paginatedPosts = (await findAllPosts(
     {},
-    page ?? 1,
+    page,
   )) as PaginatedResult<PostWithTagsAndUser>;
 
-  if (page > paginatedPosts.meta.lastPage || page < 1)
-    redirect(`/berita?page=1`);
+  if (page > paginatedPosts.meta.lastPage || page < 0) notFound();
 
   return (
     <SectionWrapper id="News">
