@@ -34,7 +34,7 @@ export function NewsFigure({ post }: Readonly<{ post: PostWithTagsAndUser }>) {
             className="text-black hover:text-primary-400 transition-all duration-500"
           >
             <div className="min-h-[52px]">
-              <span className="text-xl font-bold">
+              <span className="text-[18px] md:text-xl font-bold">
                 {post.title.length > 52
                   ? post.title.slice(0, 48) + "..."
                   : post.title}
