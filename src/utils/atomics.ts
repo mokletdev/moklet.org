@@ -1,3 +1,5 @@
+import { randomFillSync } from "crypto";
+
 //#region Date related stuff
 export function getMonthName(month: number) {
   const months = [
@@ -32,4 +34,11 @@ export function isInteger(value: string) {
 
 export function validatePage(page: string) {
   return isInteger(page) && parseInt(page) > 0;
+}
+
+export function generateRandomString(length: number): string {
+  const buffer = Buffer.alloc(length);
+  randomFillSync(buffer);
+
+  return buffer.toString("base64").slice(0, length);
 }

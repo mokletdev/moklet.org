@@ -17,6 +17,7 @@ declare module "next-auth" {
   /**
    * Returned by `useSession`, `getSession` and received as a prop on the `SessionProvider` React Context
    */
+  // eslint-disable-next-line no-unused-vars
   interface Session {
     user?: {
       id: string;
@@ -31,6 +32,7 @@ declare module "next-auth" {
 
 declare module "next-auth/jwt" {
   /** Returned by the `jwt` callback and `getToken`, when using JWT sessions */
+  // eslint-disable-next-line no-unused-vars
   interface JWT extends DefaultJWT {
     id: string;
     role: Roles;

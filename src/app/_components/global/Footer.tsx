@@ -1,5 +1,4 @@
 import Image from "@/app/_components/global/Image";
-import Link from "next/link";
 import { P } from "./Text";
 import { TertiaryLinkButton } from "./LinkButton";
 
