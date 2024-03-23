@@ -1,10 +1,3 @@
-import { PrimaryButton } from "@/app/_components/global/Button";
-import {
-  CheckboxField,
-  RadioField,
-  TextArea,
-  TextField,
-} from "@/app/_components/global/Input";
 import { H2, P } from "@/app/_components/global/Text";
 import React from "react";
 import { findForm } from "@/utils/database/form.query";
@@ -12,6 +5,7 @@ import { nextGetServerSession } from "@/lib/next-auth";
 import { redirect, RedirectType, notFound } from "next/navigation";
 import Link from "next/link";
 import { findSubmission } from "@/utils/database/submission.query";
+import Form from "../_components/Form";
 import ForbiddenForm from "../_components/ForbiddenForm";
 import { Metadata } from "next";
 
@@ -71,70 +65,7 @@ const page = async ({ params }: Props) => {
           * Menunjukkan pertanyaan yang wajib diisi
         </P>
       </div>
-      <form className="block mx-auto p-6">
-        {form.fields &&
-          form.fields.map((field) => (
-            <div key={field.id}>
-              {["email", "text", "password", "number"].includes(field.type) && (
-                <TextField
-                  type={field.type as string}
-                  label={field.label}
-                  name={field.id.toString()}
-                  placeholder={"Jawaban Anda"}
-                  className="mb-6 w-full"
-                  required={field.required}
-                />
-              )}
-              {field.type === "longtext" && (
-                <TextArea
-                  label={field.label}
-                  name={field.id.toString()}
-                  placeholder={"Jawaban Anda"}
-                  className="mb-6 w-full"
-                  required={field.required}
-                />
-              )}
-              {field.type === "radio" && (
-                <RadioField
-                  label={field.label}
-                  name={field.id.toString()}
-                  options={field.options.map((item) => {
-                    return {
-                      id: item.field_id + "_" + item.id,
-                      name: item.id.toString(),
-                      value: item.value,
-                    };
-                  })}
-                  className="mb-6 w-full"
-                  required={field.required}
-                />
-              )}
-              {field.type === "checkbox" && (
-                <CheckboxField
-                  label={field.label}
-                  name={field.id.toString()}
-                  options={field.options.map((item) => {
-                    return {
-                      id: item.field_id + "_" + item.id,
-                      value: item.value,
-                    };
-                  })}
-                  className="mb-6 w-full"
-                  required={field.required}
-                />
-              )}
-            </div>
-          ))}
-        <div className="flex justify-between">
-          <PrimaryButton type="submit">Kirim</PrimaryButton>
-          <button
-            type="reset"
-            className="cursor-pointer text-neutral-500 hover:text-primary-500 transition-all"
-          >
-            Hapus jawaban
-          </button>
-        </div>
-      </form>
+      <Form form={form} a={session.user?.id!} b={params.id} />
     </div>
   );
 };
