@@ -8,7 +8,7 @@ import Search from "./icons/Search";
 import { SearchButton, SmallSearchButton } from "./parts/Button";
 
 export function SearchBar({ query: q }: { query?: string }) {
-  const { replace } = useRouter();
+  const router = useRouter();
   const [query, setQuery] = useState<string>(q ?? "");
   function handleSearch(query: string) {
     setQuery(query);
@@ -28,21 +28,20 @@ export function SearchBar({ query: q }: { query?: string }) {
           name={""}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
-              replace(`/berita/search?q=${query}`);
+              router.push(`/berita/search?q=${query}`);
             }
           }}
         />
         <SmallSearchButton
           onClick={() => {
-            replace(`/berita/search?q=${query}`);
+            router.push(`/berita/search?q=${query}`);
           }}
         >
           <Search />
         </SmallSearchButton>
         <SearchButton
-          isDisabled={false}
           onClick={() => {
-            replace(`/berita/search?q=${query}`);
+            router.push(`/berita/search?q=${query}`);
           }}
         >
           Cari berita
