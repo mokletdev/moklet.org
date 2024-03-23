@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   },
   description:
     "A one doorway to explore Moklet's organizations' creativity and innovations",
+  keywords: "moklet.org, Moklet, Moklet.org, Telkom, SMK, Malang",
+  authors: { name: "MokletDev", url: "https://mokletdev.vercel.app" },
+  creator: "MokletDev Team",
+  publisher: "SMK Telkom Malang",
 };
 
 export default function RootLayout({
