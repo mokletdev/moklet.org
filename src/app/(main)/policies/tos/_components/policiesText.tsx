@@ -1,4 +1,4 @@
-import { H1, H2, H3, H4, Li, Pblk, P } from "@/app/_components/global/Text";
+import { H3, H4, Li, Pblk, P } from "@/app/_components/global/Text";
 
 export function SlaText() {
   return (
