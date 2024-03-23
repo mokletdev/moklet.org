@@ -2,6 +2,19 @@ import Link from "next/link";
 import Image from "./Image";
 import { PostWithTagsAndUser } from "@/types/entityRelations";
 import { stringifyDate } from "@/utils/atomics";
+import { Tag } from "@prisma/client";
+
+export function Tags({tag}: Readonly<{tag: Tag}>) {
+  return (
+    <Link
+      key={tag.tagName}
+      href={"#"}
+      className="rounded-full bg-primary-50 text-primary-400 px-[18px] py-1.5 transition-all duration-500 hover:bg-primary-400 hover:text-primary-50"
+    >
+      <span className="text-sm">{tag.tagName}</span>
+    </Link>
+  );
+}
 
 export function NewsFigure({ post }: Readonly<{ post: PostWithTagsAndUser }>) {
   return (
@@ -20,13 +33,7 @@ export function NewsFigure({ post }: Readonly<{ post: PostWithTagsAndUser }>) {
         <div>
           <div className="mb-[16px] mt-[26px] flex gap-[10px]">
             {post.tags.map((tag) => (
-              <Link
-                key={tag.tagName}
-                href={"#"}
-                className="rounded-full bg-primary-50 text-primary-400 px-[18px] py-1.5 transition-all duration-500 hover:bg-primary-400 hover:text-primary-50"
-              >
-                <span className="text-sm">{tag.tagName}</span>
-              </Link>
+              <Tags tag={tag} key={tag.tagName} />
             ))}
           </div>
           <Link
