@@ -1,11 +1,13 @@
 import { H2 } from "@/app/_components/global/Text";
 import { SectionWrapper } from "@/app/_components/global/Wrapper";
 import ArrowRight from "@/app/_components/icons/ArrowRight";
-import { postsSeeder } from "@/seeders/posts.seeder";
+import { findNewestPost } from "@/utils/database/post.query";
 import Link from "next/link";
 import { NewsFigure } from "../../global/NewsFigure";
 
-export default function News() {
+export default async function News() {
+  const latestPosts = await findNewestPost(3);
+
   return (
     <SectionWrapper id="berita">
       <div className="flex w-full flex-col gap-[54px]">
@@ -28,7 +30,7 @@ export default function News() {
           </Link>
         </div>
         <div className="flex flex-col md:flex-row w-full justify-between gap-[36px]">
-          {postsSeeder.slice(0, 3).map((post) => (
+          {latestPosts.map((post) => (
             <NewsFigure key={post.id} post={post} />
           ))}
         </div>

@@ -1,24 +1,19 @@
-import Image from "@/app/_components/global/Image";
-import Link from "next/link";
+import News from "./components/News";
+import { SearchBar } from "./components/SearchBar";
+import TopNews from "./components/TopNews";
 
-export default function Berita() {
+export default function Berita({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | undefined };
+}) {
   return (
     <>
-      <section className="min-h-[744px] w-full">
-        <div className="w-full">
-          <Link href={"/"}>
-            <Image
-              src={"/horizontal.svg"}
-              alt="Logo"
-              width={110}
-              height={40}
-              className="pointer-events-none h-[40px] w-[110px]"
-            />
-          </Link>
-        </div>
-        <div className="relative w-full"></div>
-      </section>
-      <section></section>
+      <SearchBar />
+      <div className="w-full flex flex-wrap">
+        <TopNews />
+      </div>
+      <News searchParams={searchParams} />
     </>
   );
 }

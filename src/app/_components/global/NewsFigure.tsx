@@ -2,10 +2,23 @@ import Link from "next/link";
 import Image from "./Image";
 import { PostWithTagsAndUser } from "@/types/entityRelations";
 import { stringifyDate } from "@/utils/atomics";
+import { Tag } from "@prisma/client";
+
+export function Tags({ tag }: Readonly<{ tag: Tag }>) {
+  return (
+    <Link
+      key={tag.tagName}
+      href={"#"}
+      className="rounded-full bg-primary-50 text-primary-400 px-[18px] py-1.5 transition-all duration-500 hover:bg-primary-400 hover:text-primary-50"
+    >
+      <span className="text-sm">{tag.tagName}</span>
+    </Link>
+  );
+}
 
 export function NewsFigure({ post }: Readonly<{ post: PostWithTagsAndUser }>) {
   return (
-    <figure className="w-full md:w-1/3">
+    <figure className="w-full md:w-[372px]">
       <div className="h-[200px] w-full">
         <Image
           src={post.thumbnail}
@@ -20,20 +33,20 @@ export function NewsFigure({ post }: Readonly<{ post: PostWithTagsAndUser }>) {
         <div>
           <div className="mb-[16px] mt-[26px] flex gap-[10px]">
             {post.tags.map((tag) => (
-              <Link
-                key={tag.tagName}
-                href={"#"}
-                className="rounded-full bg-primary-50 text-primary-400 px-[18px] py-1.5 transition-all duration-500 hover:bg-primary-400 hover:text-primary-50"
-              >
-                <span className="text-sm">{tag.tagName}</span>
-              </Link>
+              <Tags tag={tag} key={tag.tagName} />
             ))}
           </div>
           <Link
             href={"/berita/" + post.slug}
             className="text-black hover:text-primary-400 transition-all duration-500"
           >
-            <span className="text-xl font-bold">{post.title}</span>
+            <div className="min-h-[52px]">
+              <span className="text-[18px] md:text-xl font-bold">
+                {post.title.length > 52
+                  ? post.title.slice(0, 48) + "..."
+                  : post.title}
+              </span>
+            </div>
           </Link>
         </div>
         <div className="flex w-full justify-between">
