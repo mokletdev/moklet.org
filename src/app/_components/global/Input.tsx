@@ -31,7 +31,7 @@ export function TextField({
   required,
   type = "text",
   handleChange,
-  value
+  value,
 }: Readonly<TextFieldProps>) {
   return (
     <div className={"flex flex-col gap-2 " + className}>

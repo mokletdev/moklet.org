@@ -4,7 +4,7 @@ import { PostWithTagsAndUser } from "@/types/entityRelations";
 import { stringifyDate } from "@/utils/atomics";
 import { Tag } from "@prisma/client";
 
-export function Tags({tag}: Readonly<{tag: Tag}>) {
+export function Tags({ tag }: Readonly<{ tag: Tag }>) {
   return (
     <Link
       key={tag.tagName}
