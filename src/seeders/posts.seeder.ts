@@ -5,10 +5,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "ec436e91-ec3f-50fa-a34d-3cec23dc25d6",
     title: "What Goes Up",
     user: {
-      email: "sucipto@example.com",
-      id: "8a699a5b-4afc-5489-9379-063568f55d13",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "93f31708-80fc-5bb4-8ec7-94827b227af5",
@@ -34,10 +32,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "00a9e693-8a1f-572b-8e5e-37a176b87662",
     title: "Proposition, The",
     user: {
-      email: "sucipto@example.com",
-      id: "c5dcc5dd-5f7d-57da-bf45-471beb764003",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "41878b06-1b03-574f-977f-3f4478ebeafb",
@@ -62,10 +58,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "dd42eb68-8358-57eb-8e90-c977501dbf93",
     title: "Intimate Relations",
     user: {
-      email: "sucipto@example.com",
-      id: "934d23af-990a-5255-b840-414bc10b8cbd",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "ae5760b9-c915-5215-92b1-d98bfa156b48",
@@ -91,10 +85,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     title:
       "Don't Eat the Pictures: Sesame Street at the Metropolitan Museum of Art",
     user: {
-      email: "sucipto@example.com",
-      id: "2e735d7e-5592-5ad4-a7d5-a5272a8327f4",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "75084eb5-ba5e-5ff1-83e1-1780bdd9e154",
@@ -119,10 +111,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "f4c66139-927e-57be-abd3-d1592f525886",
     title: "Quartet",
     user: {
-      email: "sucipto@example.com",
-      id: "bfe8765c-7d24-5e2c-b93c-357a74a31970",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "e3f12ac0-87d5-5f5f-8a2a-ae1c26cf7192",
@@ -147,10 +137,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "26abc32a-6f27-5b08-b3e0-0d9aefa3cb11",
     title: "Aziz Ansari: Live at Madison Square Garden",
     user: {
-      email: "sucipto@example.com",
-      id: "26fadbd2-b273-59f3-b179-bd7455be3272",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "7c11125f-5619-51f8-a66c-794ec15568bb",
@@ -175,10 +163,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "5d7b8a2b-5f21-584d-b01c-8d8498196c34",
     title: "Hallam Foe (Mister Foe)",
     user: {
-      email: "sucipto@example.com",
-      id: "0256b99d-ed1c-5b65-b06b-a96b96a2f79b",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "99fad748-24cf-5abe-9e47-0a9b9fbb820f",
@@ -203,10 +189,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "df295b15-0cdc-50ab-a372-7f9ed0328827",
     title: "Purple Plain, The",
     user: {
-      email: "sucipto@example.com",
-      id: "9002512a-f2f1-5d44-83f7-210aec3635a6",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "e8450d4f-a48f-5d33-894f-f851b80e2954",
@@ -232,10 +216,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     title:
       "Legend of 1900, The (a.k.a. The Legend of the Pianist on the Ocean) (Leggenda del pianista sull'oceano)",
     user: {
-      email: "sucipto@example.com",
-      id: "370e2026-0ce1-5c98-a83d-d9e9ad06a025",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "e0ee2539-84b9-5ba3-a51f-92c80c01e8ec",
@@ -260,10 +242,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "a55d90db-813e-511e-88cc-1406b22c901a",
     title: "The Gamers: Hands of Fate",
     user: {
-      email: "sucipto@example.com",
-      id: "180c002a-dba0-50ec-bbb9-6ef99c53d5c1",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "1523049b-7c1a-58aa-be87-7c5a8cdca292",
@@ -288,10 +268,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "d2728b6f-5429-5736-bc62-c714c919b4e5",
     title: "Reefer Madness (a.k.a. Tell Your Children)",
     user: {
-      email: "sucipto@example.com",
-      id: "41ef2588-ee73-594e-9b3c-a7443b53c7c5",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "793e575f-9c49-588a-97e5-d2b2c7a7c0ef",
@@ -316,10 +294,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "57b843f7-7b7c-57c0-87a4-e657bb3a2412",
     title: "K-911",
     user: {
-      email: "sucipto@example.com",
-      id: "d8a255ca-a636-542e-b562-d5caa79bc700",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "87eaf55e-5fed-5fb1-b068-c5e57e566e0b",
@@ -344,10 +320,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "28fca46d-0c3b-5f87-b11a-7e007c52f614",
     title: "Material Girls",
     user: {
-      email: "sucipto@example.com",
-      id: "bf0ec917-d590-5f37-8ceb-e86f7a407013",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "f39f5999-3e5b-506f-b255-ce694ae4b860",
@@ -372,10 +346,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "3ca067a0-5617-513f-b2b0-73bda6f42533",
     title: "Carne",
     user: {
-      email: "sucipto@example.com",
-      id: "37982335-74ad-55bf-9263-c970028e4d86",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "8342e453-85f1-543d-8c59-fa3342bc080a",
@@ -400,10 +372,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "c53a9505-f4d9-5532-bfd6-af422d55b57c",
     title: "Best Laid Plans",
     user: {
-      email: "sucipto@example.com",
-      id: "7f80a6d4-44a6-5042-8870-deadf7bc5b86",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "6fa5ab7d-f3fe-5956-882d-332ae84bb05e",
@@ -428,10 +398,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "fd7b0bf4-1adb-517d-b224-5adc07bab85e",
     title: "Ice Age Columbus: Who Were the First Americans?",
     user: {
-      email: "sucipto@example.com",
-      id: "a34b8991-5eea-536c-91fa-8f0851e83a73",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "10ed5f7f-ff96-5ea2-b461-914e55dd88b7",
@@ -456,10 +424,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "e5f0b76f-5111-526c-b2ec-17224dbcb4b7",
     title: "Repo Men",
     user: {
-      email: "sucipto@example.com",
-      id: "e39a6196-ada7-5fe9-82eb-745aa7e8cc95",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "670ac03a-56a5-58b9-8488-1e0636c142d4",
@@ -484,10 +450,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "b6f2ea37-2988-5195-97de-c1be1ec89aaf",
     title: "Swades: We, the People (Our Country)",
     user: {
-      email: "sucipto@example.com",
-      id: "14d51ce5-cedd-5e62-bca1-f4326f4505fb",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "d529ebc9-a6aa-5c94-bbfa-1baf0fee38eb",
@@ -512,10 +476,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "dd07b551-6a6a-56fb-be0d-0548f6e85ed9",
     title: "Commandos Strike at Dawn",
     user: {
-      email: "sucipto@example.com",
-      id: "be8361b9-d95c-52e9-99c9-25f5911103ab",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "52060b0d-7bb7-5774-aac0-edcfe534c70d",
@@ -540,10 +502,8 @@ export const postsSeeder: PostWithTagsAndUser[] = [
     id: "2c55efd3-7b98-517e-b92c-676790d6c788",
     title: "Perrier's Bounty",
     user: {
-      email: "sucipto@example.com",
-      id: "37f71fa0-c07a-5eed-be2d-6ac2885af300",
       name: "sucipto",
-      role: "Guest",
+
       user_pic: "http://dummyimage.com/300x200.png/ff4444/ffffff",
     },
     user_id: "649bb277-8acb-5082-9b3f-ed1688fa711e",
