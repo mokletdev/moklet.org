@@ -13,7 +13,9 @@ export function SearchBar() {
           type={""}
           name={""}
         />
-        <SmallSearchButton><Search/></SmallSearchButton>
+        <SmallSearchButton>
+          <Search />
+        </SmallSearchButton>
         <SearchButton isDisabled={false}>Cari berita</SearchButton>
       </div>
     </SmallSectionWrapper>

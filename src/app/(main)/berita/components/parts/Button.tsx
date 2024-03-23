@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { MouseEventHandler, ReactNode } from "react";
 
-
 interface ButtonProps {
   children?: ReactNode;
   type?: "button" | "reset" | "submit";
@@ -64,7 +63,7 @@ export function SmallSearchButton({
       disabled={isDisabled}
       className="inline-block md:hidden w-fit rounded-full bg-primary-400 p-[13px] transition-all duration-500 hover:bg-primary-500 disabled:bg-neutral-300"
     >
-        {children}
+      {children}
     </button>
   );
 }
