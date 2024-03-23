@@ -1,10 +1,9 @@
-import { SearchBar } from "../components/SearchBar";
-import { SmallSectionWrapper } from "@/app/_components/global/Wrapper";
-import { H2 } from "@/app/_components/global/Text";
-import { findAllPosts } from "@/utils/database/post.query";
-import { PaginatedResult } from "@/utils/paginator";
-import { PostWithTagsAndUser } from "@/types/entityRelations";
 import { NewsFigure } from "@/app/_components/global/NewsFigure";
+import { H2 } from "@/app/_components/global/Text";
+import { SmallSectionWrapper } from "@/app/_components/global/Wrapper";
+import { PostWithTagsAndUser } from "@/types/entityRelations";
+import { findAllPosts } from "@/utils/database/post.query";
+import { SearchBar } from "../components/SearchBar";
 
 export default async function Search({
   searchParams,
@@ -18,10 +17,11 @@ export default async function Search({
   return (
     <SmallSectionWrapper id="search">
       <div>
-        <SearchBar />
+        <SearchBar query={searchParams.q} />
         <div className="">
           <H2 className="mb-[52px]">
-            Menampilkan hasil pencarian untuk &quot{searchParams.q ?? ""}&quot
+            Menampilkan hasil pencarian untuk &quot;
+            {searchParams.q?.toString() ?? ""}&quot;
           </H2>
           <div className="w-full flex flex-wrap gap-x-[36px] gap-y-[62px]">
             {Posts.map((post) => (

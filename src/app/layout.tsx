@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { NextAuthProvider } from "./_components/main/NextAuthProvider";
+import TopLoader from "./_components/main/TopLoader";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -12,6 +13,15 @@ export const metadata: Metadata = {
   },
   description:
     "A one doorway to explore Moklet's organizations' creativity and innovations",
+  keywords: "moklet.org, Moklet, Moklet.org, Telkom, SMK, Malang",
+  authors: { name: "MokletDev", url: "https://mokletdev.vercel.app" },
+  creator: "MokletDev Team",
+  publisher: "SMK Telkom Malang",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -22,7 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={montserrat.className}>
-        <NextAuthProvider>{children}</NextAuthProvider>
+        <NextAuthProvider>
+          <TopLoader />
+          {children}
+        </NextAuthProvider>
       </body>
     </html>
   );

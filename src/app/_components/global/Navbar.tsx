@@ -36,7 +36,8 @@ export default function Navbar() {
           <Link
             key={navOption.title}
             href={navOption.href}
-            className={`rounded-full py-2 text-center transition-all duration-300 hover:text-primary-400 ${pathname === navOption.href ? "text-red-400" : ""}`}
+            // Splitted "/a/b" will form an array: ["", "a", "b"], that's why we use the second index as comparation
+            className={`rounded-full py-2 text-center transition-all duration-300 hover:text-primary-400 ${pathname.split("/")[1] === navOption.href.split("/")[1] ? "text-red-400" : ""}`}
           >
             {navOption.title}
           </Link>

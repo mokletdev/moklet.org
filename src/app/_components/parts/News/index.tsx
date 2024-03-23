@@ -1,10 +1,9 @@
 import { H2 } from "@/app/_components/global/Text";
 import { SectionWrapper } from "@/app/_components/global/Wrapper";
 import ArrowRight from "@/app/_components/icons/ArrowRight";
-import { postsSeeder } from "@/seeders/posts.seeder";
+import { findNewestPost } from "@/utils/database/post.query";
 import Link from "next/link";
 import { NewsFigure } from "../../global/NewsFigure";
-import { findNewestPost } from "@/utils/database/post.query";
 
 export default async function News() {
   const latestPosts = await findNewestPost(3);
