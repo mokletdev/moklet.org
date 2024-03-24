@@ -1,14 +1,38 @@
+import Image from "@/app/_components/global/Image";
+import { Tags } from "@/app/_components/global/NewsFigure";
 import { H2, H3, P } from "@/app/_components/global/Text";
 import { SmallSectionWrapper } from "@/app/_components/global/Wrapper";
-import { findPost } from "@/utils/database/post.query";
-import GoBack from "./_components/BackButton";
-import Image from "@/app/_components/global/Image";
-import Related from "./_components/RelatedNews";
-import { Tags } from "@/app/_components/global/NewsFigure";
 import { stringifyDate } from "@/utils/atomics";
+import { findPost } from "@/utils/database/post.query";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import GoBack from "./_components/BackButton";
+import Related from "./_components/RelatedNews";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const post = await findPost({ slug: params.slug });
+
+  if (!post)
+    return {
+      title: "Berita tidak ditemukan",
+    };
+
+  return {
+    title: post.title,
+    description: post.description,
+    authors: { name: post.user.name },
+    keywords: post.tags.map((tag) => tag.tagName).join(", "),
+  };
+}
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const post = await findPost({ slug: params.slug });
+
+  if (!post) notFound();
 
   return (
     <SmallSectionWrapper id={"Post-" + params.slug}>
