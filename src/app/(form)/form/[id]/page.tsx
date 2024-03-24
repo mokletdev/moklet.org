@@ -8,6 +8,7 @@ import { findSubmission } from "@/utils/database/submission.query";
 import Form from "../_components/Form";
 import ForbiddenForm from "../_components/ForbiddenForm";
 import { Metadata } from "next";
+import { headers } from "next/headers";
 
 type Props = {
   params: { id: string };
@@ -24,6 +25,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 const page = async ({ params }: Props) => {
   const session = await nextGetServerSession();
+  const headersList = headers();
+  const userAgent = headersList.get("user-agent");
+
+  if (userAgent?.includes("WhatsApp")) return <></>;
   if (!session)
     return redirect(
       "/auth/signin?callbackUrl=/form/" + params.id,
