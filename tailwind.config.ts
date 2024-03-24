@@ -12,7 +12,7 @@ const config: Config = {
         "2xl": "1440px",
         xl: "1332px",
         lg: "820px",
-        sm: "420px",
+        sm: "480px",
       },
       colors: {
         black: "#121212",

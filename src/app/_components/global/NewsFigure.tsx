@@ -8,7 +8,7 @@ export function Tags({ tag }: Readonly<{ tag: Tag }>) {
   return (
     <Link
       key={tag.tagName}
-      href={"#"}
+      href={`/berita/tags/${tag.tagName}`}
       className="rounded-full bg-primary-50 text-primary-400 px-[18px] py-1.5 transition-all duration-500 hover:bg-primary-400 hover:text-primary-50"
     >
       <span className="text-sm">{tag.tagName}</span>
@@ -18,7 +18,7 @@ export function Tags({ tag }: Readonly<{ tag: Tag }>) {
 
 export function NewsFigure({ post }: Readonly<{ post: PostWithTagsAndUser }>) {
   return (
-    <figure className="w-full md:w-[372px]">
+    <figure className="w-full lg:w-[339px] xl:w-[518px] 2xl:w-[372px]">
       <div className="h-[200px] w-full">
         <Image
           src={post.thumbnail}
