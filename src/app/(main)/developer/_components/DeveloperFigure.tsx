@@ -20,7 +20,7 @@ export default function DeveloperFigure({ dev }: { dev: DeveloperData }) {
       <div className="w-full h-[278px] lg xl:h-[278px] lg:h-[183px]">
         <Image
           src={dev.picture}
-          alt={"waw"}
+          alt={`${dev.name}'s Picture`}
           width={372}
           height={278}
           className="w-full h-full"
