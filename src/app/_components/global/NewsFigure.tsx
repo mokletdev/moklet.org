@@ -18,7 +18,7 @@ export function Tags({ tag }: Readonly<{ tag: Tag }>) {
 
 export function NewsFigure({ post }: Readonly<{ post: PostWithTagsAndUser }>) {
   return (
-    <figure className="w-[339px] xl:w-[518px] 2xl:w-[372px]">
+    <figure className="w-full sm:w-[45%] md:w-[30%]">
       <div className="h-[200px] w-full">
         <Image
           src={post.thumbnail}
