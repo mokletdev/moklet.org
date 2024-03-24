@@ -10,42 +10,42 @@ const devs = [
     role: "Penyefonk",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "@loremipsum",
-    email: "drimibul@ambatukam.com",
+    email: "drimi@ambatukam.com",
   },
   {
     name: "Adit",
     role: "Waw",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "@loremipsum",
-    email: "drimibul@ambatukam.com",
+    email: "drimi@ambatukam.com",
   },
   {
     name: "Ahsan",
     role: "CEO",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "@loremipsum",
-    email: "drimibul@ambatukam.com",
+    email: "drimi@ambatukam.com",
   },
   {
     name: "Bayu",
     role: "Numpang nama",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "@loremipsum",
-    email: "drimibul@ambatukam.com",
+    email: "drimi@ambatukam.com",
   },
   {
     name: "Gilang",
     role: "🥶",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "@loremipsum",
-    email: "drimibul@ambatukam.com",
+    email: "drimi@ambatukam.com",
   },
   {
     name: "Beni",
     role: "Hengker",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "@loremipsum",
-    email: "drimibul@ambatukam.com",
+    email: "drimi@ambatukam.com",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function Developer() {
   return (
     <SectionWrapper id="developer">
       <div>
-        <div className="flex flex-col gap-[18px] mb-[54px]">
+        <div className="flex flex-col gap-[18px] mb-[54px] text-wrap">
           <H1>Lorem ipsum dolor sit amet consectetur</H1>
           <P>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat
@@ -65,7 +65,7 @@ export default function Developer() {
           </P>
         </div>
 
-        <div className="flex flex-wrap gap-x-[38px] gap-y-[62px]">
+        <div className="w-full flex flex-wrap gap-x-0 justify-center lg:gap-x-[38px] gap-y-[62px]">
           {devs.map((dev) => (
             <DeveloperFigure dev={dev} key={dev.name} />
           ))}
