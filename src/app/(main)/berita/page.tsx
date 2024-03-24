@@ -1,6 +1,6 @@
-import News from "./components/News";
-import { SearchBar } from "./components/SearchBar";
-import TopNews from "./components/TopNews";
+import News from "./_components/News";
+import { SearchBar } from "./_components/SearchBar";
+import TopNews from "./_components/TopNews";
 
 export default function Berita({
   searchParams,

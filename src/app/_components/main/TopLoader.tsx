@@ -1,16 +1,16 @@
 "use client";
-import * as NProgress from "nprogress";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 import NextjsTopLoader from "nextjs-toploader";
+import * as NProgress from "nprogress";
+import { useEffect } from "react";
 
 export default function TopLoader() {
   const pathname = usePathname();
-  const router = useRouter();
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     NProgress.done();
-  }, [pathname, router]);
+  }, [pathname, searchParams]);
 
   return <NextjsTopLoader color="#B73636" />;
 }
