@@ -6,48 +6,48 @@ import DeveloperFigure from "./_components/DeveloperFigure";
 
 const devs = [
   {
-    name:"Ambatron",
-    role:"Penyefonk",
+    name: "Ambatron",
+    role: "Penyefonk",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "@loremipsum",
-    email:"drimibul@ambatukam.com"
+    email: "drimibul@ambatukam.com",
   },
   {
-    name:"Adit",
-    role:"Waw",
+    name: "Adit",
+    role: "Waw",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "@loremipsum",
-    email:"drimibul@ambatukam.com"
+    email: "drimibul@ambatukam.com",
   },
   {
-    name:"Ahsan",
-    role:"CEO",
+    name: "Ahsan",
+    role: "CEO",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "@loremipsum",
-    email:"drimibul@ambatukam.com"
+    email: "drimibul@ambatukam.com",
   },
   {
-    name:"Bayu",
-    role:"Numpang nama",
+    name: "Bayu",
+    role: "Numpang nama",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "@loremipsum",
-    email:"drimibul@ambatukam.com"
+    email: "drimibul@ambatukam.com",
   },
   {
-    name:"Gilang",
-    role:"🥶",
+    name: "Gilang",
+    role: "🥶",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "@loremipsum",
-    email:"drimibul@ambatukam.com"
+    email: "drimibul@ambatukam.com",
   },
   {
-    name:"Beni",
-    role:"Hengker",
+    name: "Beni",
+    role: "Hengker",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "@loremipsum",
-    email:"drimibul@ambatukam.com"
+    email: "drimibul@ambatukam.com",
   },
-]
+];
 
 export default function Developer() {
   return (
@@ -66,7 +66,9 @@ export default function Developer() {
         </div>
 
         <div className="flex flex-wrap gap-x-[38px] gap-y-[62px]">
-          {devs.map((dev)=>(<DeveloperFigure dev={dev} key={dev.name}/>))}
+          {devs.map((dev) => (
+            <DeveloperFigure dev={dev} key={dev.name} />
+          ))}
         </div>
       </div>
     </SectionWrapper>
