@@ -2,7 +2,7 @@
 
 import { TextField } from "@/app/_components/global/Input";
 import { SmallSectionWrapper } from "@/app/_components/global/Wrapper";
-import { useRouter } from "next/navigation";
+import { default as useRouter } from "@/utils/customRouter";
 import { useState } from "react";
 import Search from "./icons/Search";
 import { SearchButton, SmallSearchButton } from "./parts/Button";
@@ -10,6 +10,7 @@ import { SearchButton, SmallSearchButton } from "./parts/Button";
 export function SearchBar({ query: q }: { query?: string }) {
   const router = useRouter();
   const [query, setQuery] = useState<string>(q ?? "");
+
   function handleSearch(query: string) {
     setQuery(query);
   }

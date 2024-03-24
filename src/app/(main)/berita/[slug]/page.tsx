@@ -1,9 +1,9 @@
 import { H2, H3, P } from "@/app/_components/global/Text";
 import { SmallSectionWrapper } from "@/app/_components/global/Wrapper";
 import { findPost } from "@/utils/database/post.query";
-import GoBack from "./components/BackButton";
+import GoBack from "./_components/BackButton";
 import Image from "@/app/_components/global/Image";
-import Related from "./components/RelatedNews";
+import Related from "./_components/RelatedNews";
 import { Tags } from "@/app/_components/global/NewsFigure";
 import { stringifyDate } from "@/utils/atomics";
 

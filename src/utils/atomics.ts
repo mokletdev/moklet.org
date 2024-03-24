@@ -1,6 +1,6 @@
 import { randomFillSync } from "crypto";
 
-//#region Date related stuff
+//#region Date relateds
 export function getMonthName(month: number) {
   const months = [
     "Jan",
@@ -28,6 +28,7 @@ export function stringifyDate(date: Date) {
 }
 //#endregion
 
+//#region Pagination relateds
 export function isInteger(value: string) {
   return /^\d+$/.test(value);
 }
@@ -35,6 +36,7 @@ export function isInteger(value: string) {
 export function validatePage(page: string) {
   return isInteger(page) && parseInt(page) > 0;
 }
+//#endregion
 
 export function generateRandomString(length: number): string {
   const buffer = Buffer.alloc(length);
