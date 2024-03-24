@@ -3,7 +3,8 @@ import { findPostByTag } from "@/utils/database/tag.query";
 import { Tag } from "@prisma/client";
 
 export default async function Related({ tags }: { tags: Tag[] }) {
-  const relatedPosts = await findPostByTag(tags[0].tagName, true, 3);
+  const relatedPosts =
+    tags.length > 0 ? await findPostByTag(tags[0].tagName, true, 3) : [];
 
   return (
     <div className="flex flex-col gap-[62px]">
