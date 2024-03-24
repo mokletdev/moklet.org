@@ -1,11 +1,10 @@
 "use client";
 import { BackButton } from "../../_components/parts/Button";
 import ArrowLeft from "../../_components/icons/ArrowLeft";
-import { default as useRouter } from "@/utils/customRouter";
+import { useRouter } from "next/navigation";
 
 export default function GoBack() {
   const router = useRouter();
-
   return (
     <BackButton
       onClick={() => {
