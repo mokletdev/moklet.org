@@ -6,7 +6,7 @@ import Link from "next/link";
 import { NewsFigure } from "../../global/NewsFigure";
 
 export default async function News() {
-  const latestPosts = await findNewestPost(3);
+  const latestPosts = await findNewestPost(5);
 
   return (
     <SectionWrapper id="berita">
@@ -29,10 +29,12 @@ export default async function News() {
             </div>
           </Link>
         </div>
-        <div className="flex flex-col md:flex-row w-full justify-between gap-[36px]">
-          {latestPosts.map((post) => (
-            <NewsFigure key={post.id} post={post} />
-          ))}
+        <div className="w-full overflow-x-none md:overflow-x-scroll">
+          <div className="flex flex-col md:flex-row w-full md:w-[200%] justify-start gap-[36px]">
+            {latestPosts.map((post) => (
+              <NewsFigure key={post.id} post={post} />
+            ))}
+          </div>
         </div>
       </div>
     </SectionWrapper>

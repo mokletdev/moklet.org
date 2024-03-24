@@ -21,8 +21,8 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="md:relative fixed z-[999] mx-auto w-full flex md:max-w-[1192px] py-4 md:py-0 px-5 bg-white md:bg-transparent justify-between">
-      <Link href={"/"} className="block md:mt-8">
+    <nav className="lg:relative fixed z-[999] mx-auto w-full flex lg:max-w-[1192px] py-4 lg:py-0 px-5 bg-white lg:bg-transparent justify-between">
+      <Link href={"/"} className="block lg:mt-8">
         <Image
           src={"/horizontal.svg"}
           alt="Logo moklet.org"
@@ -31,7 +31,7 @@ export default function Navbar() {
           className="pointer-events-none h-[50px] w-[130px]"
         />
       </Link>
-      <div className="fixed hidden left-1/2 top-[24.5px] md:flex w-full max-w-[602px] -translate-x-1/2 justify-between rounded-full border border-neutral-300 bg-white px-[50px] py-3">
+      <div className="fixed hidden left-1/2 top-[24.5px] lg:flex w-full max-w-[602px] -translate-x-1/2 justify-between rounded-full border border-neutral-300 bg-white px-[50px] py-3">
         {navOptions.map((navOption) => (
           <Link
             key={navOption.title}
@@ -43,7 +43,7 @@ export default function Navbar() {
           </Link>
         ))}
       </div>
-      <button className="block md:hidden">
+      <button className="block lg:hidden">
         <HamburgerIcon />
       </button>
     </nav>
