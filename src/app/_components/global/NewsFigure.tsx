@@ -1,11 +1,11 @@
 import Link from "next/link";
-import Image from "../../global/Image";
+import Image from "./Image";
 import { PostWithTagsAndUser } from "@/types/entityRelations";
 import { stringifyDate } from "@/utils/atomics";
 
 export function NewsFigure({ post }: Readonly<{ post: PostWithTagsAndUser }>) {
   return (
-    <figure className="w-full md:w-1/3">
+    <figure className="w-full md:w-[372px]">
       <div className="h-[200px] w-full">
         <Image
           src={post.thumbnail}
@@ -33,7 +33,13 @@ export function NewsFigure({ post }: Readonly<{ post: PostWithTagsAndUser }>) {
             href={"/berita/" + post.slug}
             className="text-black hover:text-primary-400 transition-all duration-500"
           >
-            <span className="text-xl font-bold">{post.title}</span>
+            <div className="min-h-[52px]">
+              <span className="text-[18px] md:text-xl font-bold">
+                {post.title.length > 52
+                  ? post.title.slice(0, 48) + "..."
+                  : post.title}
+              </span>
+            </div>
           </Link>
         </div>
         <div className="flex w-full justify-between">

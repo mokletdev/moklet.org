@@ -1,6 +1,24 @@
 import prisma from "@/lib/prisma";
+import { paginator } from "../paginator";
+import { Prisma, Tag } from "@prisma/client";
 
-export const findAllTag = async () => {
+const paginate = paginator({ perPage: 10 });
+
+export const findAllTags = async (page?: number) => {
+  if (page) {
+    return await paginate<Tag, Prisma.TagFindManyArgs>(
+      prisma.post,
+      { page },
+      {
+        include: {
+          _count: {
+            select: { posts: { where: { published: true } } },
+          },
+        },
+      },
+    );
+  }
+
   return await prisma.tag.findMany({
     include: {
       _count: {

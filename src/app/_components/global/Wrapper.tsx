@@ -15,3 +15,14 @@ export function SectionWrapper({
     </section>
   );
 }
+
+export function SmallSectionWrapper({
+  children,
+  id,
+}: Readonly<SectionWrapperProps>) {
+  return (
+    <section className="w-full py-[32px]" id={id}>
+      {children}
+    </section>
+  );
+}

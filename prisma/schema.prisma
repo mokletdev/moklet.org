@@ -5,7 +5,8 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-1.0.x"]
 }
 
 datasource db {
@@ -58,7 +59,7 @@ model Post {
   id           String    @id @default(uuid()) @map("post_id") @db.Char(36)
   title        String
   view_count   Int       @default(0)
-  description  String
+  description  String    @db.LongText
   content      String    @db.LongText
   tags         Tag[]
   created_at   DateTime  @default(now())
@@ -82,7 +83,7 @@ model Tag {
 model Form {
   id          String       @id @map("form_id")
   title       String
-  description String?
+  description String?      @db.VarChar(255)
   user        User         @relation(fields: [user_id], references: [id])
   user_id     String
   fields      Field[]
@@ -98,6 +99,9 @@ model Form {
 
 enum Field_Type {
   text
+  number
+  email
+  password
   longtext
   radio
   checkbox
@@ -139,5 +143,5 @@ model Submission_Field {
   submission_id String
   field         Field      @relation(fields: [field_id], references: [id])
   field_id      Int
-  value         String
+  value         String     @db.LongText
 }

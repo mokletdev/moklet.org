@@ -1,4 +1,4 @@
-import LinkButton from "@/app/_components/global/LinkButton";
+import PrimaryLinkButton from "@/app/_components/global/LinkButton";
 import { SectionWrapper } from "@/app/_components/global/Wrapper";
 import { H2, P } from "@/app/_components/global/Text";
 import Image from "@/app/_components/global/Image";
@@ -70,7 +70,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <LinkButton href="#">Baca lebih detail</LinkButton>
+          <PrimaryLinkButton href="#">Baca lebih detail</PrimaryLinkButton>
         </div>
       </div>
     </SectionWrapper>

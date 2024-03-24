@@ -1,5 +1,5 @@
 import Image from "@/app/_components/global/Image";
-import LinkButton from "../global/LinkButton";
+import PrimaryLinkButton from "../global/LinkButton";
 import { H1, H2, P } from "../global/Text";
 import { SectionWrapper } from "../global/Wrapper";
 
@@ -26,7 +26,7 @@ export default function SubOrgan() {
                 Mengembangkan Bakat di Sub-organ
               </H2>
               <div
-                className={`absolute left-[3px] top-[17px] md:top-[28px] -z-10 h-[16px] bg-primary-100 w-[220px] md:w-[288px]`}
+                className={`absolute left-[3px] top-[17px] md:top-[28px] -z-10 h-[16px] bg-primary-100 w-[220px] md:w-[330px]`}
               ></div>
             </div>
             <P>
@@ -39,7 +39,7 @@ export default function SubOrgan() {
             <SubOrganCount count={2} title="Bidang Seni & Bahasa" />
             <SubOrganCount count={5} title="Bidang Lainnya" />
           </div>
-          <LinkButton href="#">Explorasi lebih jauh</LinkButton>
+          <PrimaryLinkButton href="#">Explorasi lebih jauh</PrimaryLinkButton>
         </div>
         <div className="w-full md:w-1/2">
           <Image

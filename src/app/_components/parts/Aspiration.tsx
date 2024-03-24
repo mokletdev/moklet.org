@@ -23,16 +23,19 @@ export default function Aspiration() {
             label="judul"
             placeholder="Masukkan judul aspirasi"
             className="mb-6 w-full"
+            name="judul"
+            type="text"
           />
           <TextArea
             label="aspirasi"
             placeholder="Bagikan impian atau aspirasi Anda untuk MPK Moklet"
             className="mb-[44px] w-full"
+            name="aspirasi"
           />
-          <PrimaryButton>Kirim aspirasi</PrimaryButton>
+          <PrimaryButton isDisabled={false}>Kirim aspirasi</PrimaryButton>
         </form>
-        <EclipseIcon className="absolute -top-12 -left-4 hidden md:block" />
-        <EclipseIcon className="absolute bottom-36 left-[310px] hidden md:block" />
+        <EclipseIcon className="absolute -top-[102px] -left-20 hidden md:block" />
+        <EclipseIcon className="absolute bottom-24 left-[310px] hidden md:block" />
       </div>
     </SectionWrapper>
   );
