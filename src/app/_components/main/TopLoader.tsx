@@ -12,5 +12,5 @@ export default function TopLoader() {
     NProgress.done();
   }, [pathname, searchParams]);
 
-  return <NextjsTopLoader color="#B73636" showSpinner={false}/>;
+  return <NextjsTopLoader color="#B73636" showSpinner={false} />;
 }
