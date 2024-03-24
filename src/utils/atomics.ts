@@ -42,3 +42,18 @@ export function generateRandomString(length: number): string {
 
   return buffer.toString("base64").slice(0, length);
 }
+
+export const formToJSON = (elements: HTMLElement) =>
+  [].reduce.call(
+    elements,
+    (data: any, element: HTMLInputElement) => {
+      data[element.name] =
+        element.type == "checkbox"
+          ? data[element.name]
+            ? [...data[element.name], element.value]
+            : [element.value]
+          : element.value;
+      return data;
+    },
+    {},
+  ) as Array<string | Array<string>>;

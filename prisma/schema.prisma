@@ -84,7 +84,7 @@ model Form {
   id          String       @id @map("form_id")
   title       String
   description String?      @db.VarChar(255)
-  user        User         @relation(fields: [user_id], references: [id])
+  user        User         @relation(fields: [user_id], references: [id], onDelete: Cascade)
   user_id     String
   fields      Field[]
   submissions Submission[]
@@ -112,7 +112,7 @@ model Field {
   label       String
   type        Field_Type
   required    Boolean            @default(false)
-  form        Form               @relation(fields: [form_id], references: [id])
+  form        Form               @relation(fields: [form_id], references: [id], onDelete: Cascade)
   form_id     String
   options     Field_Option[]
   submissions Submission_Field[]
@@ -121,17 +121,16 @@ model Field {
 model Field_Option {
   id       Int    @id @default(autoincrement()) @map("field_option_id")
   value    String
-  field    Field  @relation(fields: [field_id], references: [id])
+  field    Field  @relation(fields: [field_id], references: [id], onDelete: Cascade)
   field_id Int
 }
 
 model Submission {
   id         String             @id @default(uuid()) @map("submission_id") @db.Char(36)
-  form       Form               @relation(fields: [form_id], references: [id])
+  form       Form               @relation(fields: [form_id], references: [id], onDelete: Cascade)
   form_id    String
   user       User               @relation(fields: [user_id], references: [id])
   user_id    String
-  data       Json
   created_at DateTime           @default(now())
   updated_at DateTime           @updatedAt
   fields     Submission_Field[]
@@ -139,9 +138,9 @@ model Submission {
 
 model Submission_Field {
   id            String     @id @default(uuid()) @map("submission_field_id") @db.Char(36)
-  submission    Submission @relation(fields: [submission_id], references: [id])
+  submission    Submission @relation(fields: [submission_id], references: [id], onDelete: Cascade)
   submission_id String
-  field         Field      @relation(fields: [field_id], references: [id])
+  field         Field      @relation(fields: [field_id], references: [id], onDelete: Cascade)
   field_id      Int
   value         String     @db.LongText
 }

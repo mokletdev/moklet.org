@@ -5,7 +5,11 @@ import {
   findAllForms,
   findForm,
 } from "@/utils/database/form.query";
-import { findSubmission } from "@/utils/database/submission.query";
+import {
+  createSubmission,
+  findSubmission,
+} from "@/utils/database/submission.query";
+import { Prisma } from "@prisma/client";
 
 export const findFormById = async (form_id: string, active: boolean) => {
   const form = await findForm({ id: form_id, is_open: active });
@@ -25,15 +29,11 @@ export const deleteFormById = async (form_id: string) => {
   return form;
 };
 
-type submitFormData = {
-  user_id: string;
-  form_id: string;
-  answer: Array<{ name: string; value: string }>;
-};
-
-export const submitForm = async (data: submitFormData) => {
-  const { user_id, form_id, answer } = data;
-
+export const submitForm = async (
+  user_id: string,
+  form_id: string,
+  answers: Array<{ name: string; value: string }>,
+) => {
   const form = await findForm({ id: form_id, is_open: true });
 
   if (!form) throw new Error("Form not found!");
@@ -48,16 +48,19 @@ export const submitForm = async (data: submitFormData) => {
     if (submission) throw new Error("Already submit!");
   }
 
-  const invalidAnswer = answer.find(
+  answers = answers.filter((answer) => answer.value != "");
+
+  const invalidAnswer = answers.find(
     (item) => !form.fields.find((i) => item.name == i.id.toString()),
   );
+  console.log(invalidAnswer);
 
   if (invalidAnswer) throw new Error("Invalid request!");
 
   for (let i = 0; i < form.fields.length; i++) {
     const field = form.fields[i];
 
-    const qAnswer = answer.find((item) => item.name == answer[i].name);
+    const qAnswer = answers.find((item) => item.name == answers[i].name);
 
     if (field.required && !qAnswer)
       throw new Error(field.label + " is required.");
@@ -69,4 +72,17 @@ export const submitForm = async (data: submitFormData) => {
       if (invalidAnswer) throw new Error("Invalid request!");
     }
   }
+
+  let fields_create: Prisma.Submission_FieldUncheckedCreateWithoutSubmissionInput[] =
+    answers.map((answer) => {
+      return { field_id: parseInt(answer.name), value: answer.value };
+    });
+
+  let submission = await createSubmission({
+    user_id,
+    form_id,
+    fields: { create: fields_create },
+  });
+
+  return { submission_id: submission.id, success: true };
 };

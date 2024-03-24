@@ -67,3 +67,21 @@ export function SmallSearchButton({
     </button>
   );
 }
+
+export function BackButton({
+  children,
+  type,
+  onClick,
+  isDisabled,
+}: Readonly<ButtonProps>) {
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={isDisabled}
+      className="inline-block rounded-full bg-primary-400 h-[50px] px-[13px] transition-all duration-500 hover:bg-primary-500 disabled:bg-neutral-300"
+    >
+      {children}
+    </button>
+  );
+}
