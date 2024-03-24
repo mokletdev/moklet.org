@@ -4,6 +4,7 @@ import "./globals.css";
 import { NextAuthProvider } from "./_components/main/NextAuthProvider";
 import { Toaster } from "sonner";
 import TopLoader from "./_components/main/TopLoader";
+import { Suspense } from "react";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -34,7 +35,9 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={montserrat.className}>
         <NextAuthProvider>
-          <TopLoader />
+          <Suspense>
+            <TopLoader />
+          </Suspense>
           <Toaster duration={3000} pauseWhenPageIsHidden theme="light" />
           {children}
         </NextAuthProvider>
