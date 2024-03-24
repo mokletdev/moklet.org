@@ -6,45 +6,59 @@ import DeveloperFigure from "./_components/DeveloperFigure";
 
 const devs = [
   {
-    name: "Ambatron",
-    role: "Penyefonk",
+    name: "Kusindra Aji Rabbany",
+    role: "Fullstack Developer",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
-    instagram: "@loremipsum",
+    instagram: "@kusindr_",
+    email: "work@benspace.xyz",
+  },
+  {
+    name: "Ahsan Awadullah Azizan",
+    role: "Fullstack Developer",
+    picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
+    instagram: "@ahsanzizan",
+    email: "contact@ahsanzizan.xyz",
+  },
+  {
+    name: "Teguh Bayu Pratama",
+    role: "Frontend Developer",
+    picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
+    instagram: "@soyuz_slav",
     email: "drimi@ambatukam.com",
   },
   {
-    name: "Adit",
-    role: "Waw",
+    name: "Muhammad Fadhil Kholaf",
+    role: "Frontend Developer",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
-    instagram: "@loremipsum",
+    instagram: "@tlg69.fadhil",
     email: "drimi@ambatukam.com",
   },
   {
-    name: "Ahsan",
-    role: "CEO",
+    name: "Moch. Gilang Ramadhan",
+    role: "Graphic & UI/UX Designer",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
-    instagram: "@loremipsum",
+    instagram: "@guilangs_",
     email: "drimi@ambatukam.com",
   },
   {
-    name: "Bayu",
-    role: "Numpang nama",
-    picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
-    instagram: "@loremipsum",
-    email: "drimi@ambatukam.com",
-  },
-  {
-    name: "Gilang",
-    role: "🥶",
-    picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
-    instagram: "@loremipsum",
-    email: "drimi@ambatukam.com",
-  },
-  {
-    name: "Beni",
+    name: "Pandhu Arya Munjalindra",
     role: "Hengker",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "@loremipsum",
+    email: "drimi@ambatukam.com",
+  },
+  {
+    name: "Muhammad Zuhair Zuhdi",
+    role: "Hengker",
+    picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
+    instagram: "@muhammad_zuhair_zuhdi",
+    email: "drimi@ambatukam.com",
+  },
+  {
+    name: "Arsyad Ali Mahardika",
+    role: "Hengker",
+    picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
+    instagram: "@arsyadam.id",
     email: "drimi@ambatukam.com",
   },
 ];
@@ -65,7 +79,7 @@ export default function Developer() {
           </P>
         </div>
 
-        <div className="w-full flex flex-wrap gap-x-0 justify-center lg:gap-x-[38px] gap-y-[62px]">
+        <div className="w-full flex flex-wrap gap-x-0 lg:gap-x-[38px] gap-y-[62px]">
           {devs.map((dev) => (
             <DeveloperFigure dev={dev} key={dev.name} />
           ))}
