@@ -4,6 +4,7 @@ import { SmallSectionWrapper } from "@/app/_components/global/Wrapper";
 import { PostWithTagsAndUser } from "@/types/entityRelations";
 import { findAllPosts } from "@/utils/database/post.query";
 import { SearchBar } from "../_components/SearchBar";
+import GoBack from "../[slug]/_components/BackButton";
 
 export default async function Search({
   searchParams,
@@ -18,6 +19,7 @@ export default async function Search({
 
   return (
     <SmallSectionWrapper id="search">
+      <GoBack />
       <div>
         <SearchBar query={searchParams.q} />
         <div className="">
