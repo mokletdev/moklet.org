@@ -31,7 +31,7 @@ export default async function News({
           Berita Terbaru Organisasi dan Sub Organ Moklet
         </H2>
 
-        <div className="w-full flex flex-wrap gap-x-[38px] gap-y-[62px] justify-center sm:justify-start">
+        <div className="w-full flex flex-wrap gap-x-[38px] gap-y-[62px] justify-center">
           {paginatedPosts.data.map((post) => (
             <NewsFigure post={post} key={post.id} />
           ))}

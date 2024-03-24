@@ -17,10 +17,10 @@ export function SearchBar({ query: q }: { query?: string }) {
 
   return (
     <SmallSectionWrapper id="SearchBar">
-      <div className="flex gap-3 justify-center items-center w-full mt-[30px] md:mt-0">
+      <div className="flex gap-3 justify-center items-center w-full mt-[30px] lg:mt-0">
         <TextField
           placeholder="Cari berita di moklet.org..."
-          className="w-[318px] md:w-[1049px]"
+          className="w-[318px] lg:w-[820px] xl:w-[1049px]"
           value={query}
           handleChange={(e) => {
             handleSearch(e.target.value);

@@ -7,7 +7,7 @@ export function WideNewsFigure({
   post,
 }: Readonly<{ post: PostWithTagsAndUser }>) {
   return (
-    <figure className="w-full h-[172px] md:w-[560px] md:h-[140px] flex items-center gap-[26px]">
+    <figure className="w-full h-[172px] lg:h-[140px] xl:w-[560px] xl:h-[140px] flex items-center gap-[26px]">
       <div className="min-w-[140px] h-full">
         <Image
           src={post.thumbnail}
