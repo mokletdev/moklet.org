@@ -14,6 +14,18 @@ export const findSubmission = async (filter: Prisma.SubmissionWhereInput) => {
   });
 };
 
+export const findSubmissionWithForm = async (
+  filter: Prisma.SubmissionWhereInput,
+) => {
+  return await prisma.submission.findFirst({
+    where: filter,
+    include: {
+      fields: true,
+      form: { include: { fields: { include: { options: true } } } },
+    },
+  });
+};
+
 export const createSubmission = async (
   data: Prisma.SubmissionUncheckedCreateInput,
 ) => {
@@ -25,6 +37,10 @@ export const updateSubmission = async (
   update: Prisma.SubmissionUncheckedUpdateInput,
 ) => {
   return await prisma.submission.update({ where, data: update });
+};
+
+export const deleteSubmissionField = async (submission_id: string) => {
+  return await prisma.submission_Field.deleteMany({ where: { submission_id } });
 };
 
 export const deleteSubmission = async (form_id: string) => {
