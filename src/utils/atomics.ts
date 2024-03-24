@@ -50,7 +50,9 @@ export const formToJSON = (elements: HTMLElement) =>
       data[element.name] =
         element.type == "checkbox"
           ? data[element.name]
-            ? [...data[element.name], element.value]
+            ? element.checked
+              ? [...data[element.name], element.value]
+              : data[element.name]
             : [element.value]
           : element.value;
       return data;
