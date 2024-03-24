@@ -26,9 +26,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const page = async ({ params }: Props) => {
   const session = await nextGetServerSession();
   const headersList = headers();
-  const userAgent = headersList.get("user-agent");
+  const userAgent = headersList.get("User-Agent");
 
-  if (userAgent?.includes("WhatsApp")) return <></>;
+  if (userAgent?.toLocaleLowerCase()?.includes("whatsapp")) return <></>;
   if (!session)
     return redirect(
       "/auth/signin?callbackUrl=/form/" + params.id,
