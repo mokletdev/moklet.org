@@ -28,12 +28,17 @@ export const findAllTags = async (page?: number) => {
   });
 };
 
-export const findPostByTag = async (tagName: string, published?: boolean) => {
+export const findPostByTag = async (
+  tagName: string,
+  published?: boolean,
+  limit?: number,
+) => {
   const findTag = await prisma.tag.findUnique({
     where: { tagName },
     select: {
       posts: {
         orderBy: { published_at: "desc" },
+        take: limit,
         where: { published },
         include: {
           user: { select: { name: true, user_pic: true } },

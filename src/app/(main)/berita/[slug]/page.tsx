@@ -62,7 +62,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
 
         <div className="flex flex-col gap-[52px] w-[372px]">
           <H3>Berita Terkait</H3>
-          <Related />
+          <Related tags={post?.tags!} />
         </div>
       </div>
     </SmallSectionWrapper>
