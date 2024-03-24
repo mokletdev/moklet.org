@@ -4,7 +4,10 @@ export default function Image(props: Readonly<ImageProps>) {
   return (
     <NextImage
       {...props}
-      className={props.className + " pointer-events-none object-cover bg-center bg-no-repeat"}
+      className={
+        props.className +
+        " pointer-events-none object-cover bg-center bg-no-repeat"
+      }
     />
   );
 }
