@@ -24,14 +24,14 @@ export default async function News({
   return (
     <SectionWrapper id="News">
       <div className="mb-[92px]">
-        <H4 className="mb-[54px] block sm:hidden">
+        <H4 className="mb-[54px] text-wrap block sm:hidden">
           Berita Terbaru Organisasi dan Sub Organ Moklet
         </H4>
-        <H2 className="text-wrap mb-[54px] hidden w-full lg:text-nowrap sm:block">
+        <H2 className="text-wrap mb-[54px] hidden w-full xl:text-nowrap sm:block">
           Berita Terbaru Organisasi dan Sub Organ Moklet
         </H2>
 
-        <div className="w-full flex flex-wrap gap-x-[36px] gap-y-[62px]">
+        <div className="w-full flex flex-wrap gap-x-[36px] gap-y-[62px] justify-center sm:justify-start">
           {paginatedPosts.data.map((post) => (
             <NewsFigure post={post} key={post.id} />
           ))}
