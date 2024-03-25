@@ -2,7 +2,7 @@
 
 import { TextField } from "@/app/_components/global/Input";
 import { SmallSectionWrapper } from "@/app/_components/global/Wrapper";
-import { useRouter } from "next/navigation";
+import { default as useRouter } from "@/utils/customRouter";
 import { useState } from "react";
 import Search from "./icons/Search";
 import { SearchButton, SmallSearchButton } from "./parts/Button";
@@ -10,16 +10,17 @@ import { SearchButton, SmallSearchButton } from "./parts/Button";
 export function SearchBar({ query: q }: { query?: string }) {
   const router = useRouter();
   const [query, setQuery] = useState<string>(q ?? "");
+
   function handleSearch(query: string) {
     setQuery(query);
   }
 
   return (
     <SmallSectionWrapper id="SearchBar">
-      <div className="flex gap-3 justify-center items-center w-full mt-[30px] md:mt-0">
+      <div className="flex justify-between items-center w-full mt-[30px] lg:mt-0">
         <TextField
           placeholder="Cari berita di moklet.org..."
-          className="w-[318px] md:w-[1049px]"
+          className="w-[85%]"
           value={query}
           handleChange={(e) => {
             handleSearch(e.target.value);

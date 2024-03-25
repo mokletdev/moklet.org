@@ -9,13 +9,13 @@ export default async function TopNews() {
   return (
     <SmallSectionWrapper id="TopNews">
       <div className="flex flex-col gap-[54px]">
-        <H4 className="block sm:hidden">
+        <H4 className="block text-wrap sm:hidden">
           Berita Terpopuler Organisasi & Sub Organ Moklet
         </H4>
-        <H2 className="text-wrap hidden w-full lg:text-nowrap sm:block">
+        <H2 className="text-wrap hidden w-full sm:block">
           Berita Terpopuler Organisasi & Sub Organ Moklet
         </H2>
-        <div className="flex flex-col gap-[42px] items-center justify-center sm: md:flex-row md:flex-wrap md:gap-x-[72px] md:gap-y-[58px]">
+        <div className="flex flex-col gap-y-[42px] items-center justify-between w-full md:flex-row flex-wrap">
           {popularNews.map((post) => (
             <WideNewsFigure post={post} key={post.id} />
           ))}

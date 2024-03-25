@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
+export default function MainLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <>
       <Navbar />
-      <main className="mx-auto w-full max-w-[380px] sm:max-w-[716px] md:max-w-[1192px] py-[22px]">
+      <main className="mx-auto max-w-[94%] lg:max-w-[87.5%] xl:max-w-[1192px] py-[22px]">
         {children}
         <Footer />
       </main>

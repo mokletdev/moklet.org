@@ -12,18 +12,22 @@ import { FormEvent, useEffect } from "react";
 import { toast } from "sonner";
 import { submitForm } from "../action";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { default as useRouter } from "@/utils/customRouter";
 import { formToJSON } from "@/utils/atomics";
 
-export default function Form({
-  form,
-  a,
-  b,
-}: {
+type FormPops = {
   form: FormWithFields;
   a: string;
   b: string;
-}) {
+  answers?: {
+    id: string;
+    submission_id: string;
+    field_id: number;
+    value: string;
+  }[];
+};
+
+export default function Form({ form, a, b, answers }: FormPops) {
   const [loading, setLoading] = useState(false);
   const router = useRouter();
 
@@ -57,7 +61,7 @@ export default function Form({
       const errorMessage = !isChecked()
         ? "At least one checkbox must be selected."
         : "";
-      (firstCheckbox as any).setCustomValidity(errorMessage);
+      (firstCheckbox as HTMLInputElement).setCustomValidity(errorMessage);
     }
 
     init();
@@ -75,12 +79,17 @@ export default function Form({
           : [{ name: key, value: value }];
       });
 
-      const submit = await submitForm(a, b, arrayAnswers);
+      const submit = await submitForm(
+        a,
+        b,
+        arrayAnswers,
+        answers?.[0].submission_id,
+      );
       if (submit.success) {
         toast.success("Jawaban terkirim!", {
           id: toastId,
         });
-        router.push(b + "/alreadysubmit");
+        router.push(`/form/${b}/alreadysubmit`);
       } else
         toast.error("Terjadi kesalahan", {
           id: toastId,
@@ -92,6 +101,7 @@ export default function Form({
       });
     }
   }
+
   return (
     <form className="block mx-auto p-6" onSubmit={handleSubmit} id="formApp">
       {form.fields &&
@@ -105,6 +115,9 @@ export default function Form({
                 placeholder={"Jawaban Anda"}
                 className="mb-6 w-full"
                 required={field.required}
+                value={
+                  answers?.find((item) => item.field_id == field.id)?.value
+                }
               />
             )}
             {field.type === "longtext" && (
@@ -114,6 +127,9 @@ export default function Form({
                 placeholder={"Jawaban Anda"}
                 className="mb-6 w-full"
                 required={field.required}
+                value={
+                  answers?.find((item) => item.field_id == field.id)?.value
+                }
               />
             )}
             {field.type === "radio" && (
@@ -129,6 +145,9 @@ export default function Form({
                 })}
                 className="mb-6 w-full"
                 required={field.required}
+                value={
+                  answers?.find((item) => item.field_id == field.id)?.value
+                }
               />
             )}
             {field.type === "checkbox" && (
@@ -143,6 +162,9 @@ export default function Form({
                 })}
                 className="mb-6 w-full"
                 required={field.required}
+                value={
+                  answers?.find((item) => item.field_id == field.id)?.value
+                }
               />
             )}
           </div>

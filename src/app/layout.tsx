@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Montserrat } from "next/font/google";
-import "./globals.css";
-import { NextAuthProvider } from "./_components/main/NextAuthProvider";
+import { Suspense } from "react";
 import { Toaster } from "sonner";
+import { NextAuthProvider } from "./_components/main/NextAuthProvider";
 import TopLoader from "./_components/main/TopLoader";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
+import "./globals.css";
+import { montserrat } from "@/utils/loadFont";
 
 export const metadata: Metadata = {
   title: {
@@ -34,7 +35,9 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={montserrat.className}>
         <NextAuthProvider>
-          <TopLoader />
+          <Suspense>
+            <TopLoader />
+          </Suspense>
           <Toaster duration={3000} pauseWhenPageIsHidden theme="light" />
           {children}
         </NextAuthProvider>

@@ -7,7 +7,9 @@ import {
 } from "@/utils/database/form.query";
 import {
   createSubmission,
+  deleteSubmissionField,
   findSubmission,
+  updateSubmission,
 } from "@/utils/database/submission.query";
 import { Prisma } from "@prisma/client";
 
@@ -33,8 +35,14 @@ export const submitForm = async (
   user_id: string,
   form_id: string,
   answers: Array<{ name: string; value: string }>,
+  submission_id?: string,
 ) => {
   const form = await findForm({ id: form_id, is_open: true });
+
+  if (submission_id) {
+    const submission = await findSubmission({ id: submission_id });
+    if (!submission) throw new Error("Form not found!");
+  }
 
   if (!form) throw new Error("Form not found!");
   if (
@@ -45,7 +53,7 @@ export const submitForm = async (
 
   if (form.submit_once) {
     const submission = await findSubmission({ user_id, form_id });
-    if (submission) throw new Error("Already submit!");
+    if (submission && !form.allow_edit) throw new Error("Already submit!");
   }
 
   answers = answers.filter((answer) => answer.value != "");
@@ -53,7 +61,6 @@ export const submitForm = async (
   const invalidAnswer = answers.find(
     (item) => !form.fields.find((i) => item.name == i.id.toString()),
   );
-  console.log(invalidAnswer);
 
   if (invalidAnswer) throw new Error("Invalid request!");
 
@@ -78,6 +85,16 @@ export const submitForm = async (
       return { field_id: parseInt(answer.name), value: answer.value };
     });
 
+  if (submission_id) {
+    await deleteSubmissionField(submission_id);
+    const update = await updateSubmission(
+      { id: submission_id },
+      { fields: { create: fields_create }, updated_at: new Date() },
+    );
+    if (!update) throw new Error("Internal server erorr");
+
+    return { submission_id: submission_id, success: true };
+  }
   let submission = await createSubmission({
     user_id,
     form_id,

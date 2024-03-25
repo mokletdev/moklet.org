@@ -3,7 +3,8 @@ import { H2 } from "@/app/_components/global/Text";
 import { SmallSectionWrapper } from "@/app/_components/global/Wrapper";
 import { PostWithTagsAndUser } from "@/types/entityRelations";
 import { findAllPosts } from "@/utils/database/post.query";
-import { SearchBar } from "../components/SearchBar";
+import { SearchBar } from "../_components/SearchBar";
+import GoBack from "../[slug]/_components/BackButton";
 
 export default async function Search({
   searchParams,
@@ -11,11 +12,14 @@ export default async function Search({
   searchParams: { [key: string]: string | undefined };
 }) {
   const Posts = (await findAllPosts({
-    title: { contains: searchParams.q ?? "" },
+    OR: (searchParams.q as string).split(" ").map((query) => ({
+      title: { contains: query },
+    })),
   })) as PostWithTagsAndUser[];
 
   return (
     <SmallSectionWrapper id="search">
+      <GoBack />
       <div>
         <SearchBar query={searchParams.q} />
         <div className="">
