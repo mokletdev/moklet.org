@@ -1,14 +1,39 @@
-import { H2, H3, P } from "@/app/_components/global/Text";
-import { SmallSectionWrapper } from "@/app/_components/global/Wrapper";
-import { findPost } from "@/utils/database/post.query";
-import GoBack from "./_components/BackButton";
 import Image from "@/app/_components/global/Image";
-import Related from "./_components/RelatedNews";
 import { Tags } from "@/app/_components/global/NewsFigure";
+import { H2, H3 } from "@/app/_components/global/Text";
+import { SmallSectionWrapper } from "@/app/_components/global/Wrapper";
 import { stringifyDate } from "@/utils/atomics";
+import { findPost } from "@/utils/database/post.query";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+import GoBack from "./_components/BackButton";
+import MdViewer from "./_components/MdViewer";
+import Related from "./_components/RelatedNews";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const post = await findPost({ slug: params.slug });
+
+  if (!post)
+    return {
+      title: "Berita tidak ditemukan",
+    };
+
+  return {
+    title: post.title,
+    description: post.description,
+    authors: { name: post.user.name },
+    keywords: post.tags.map((tag) => tag.tagName).join(", "),
+  };
+}
 
 export default async function Post({ params }: { params: { slug: string } }) {
   const post = await findPost({ slug: params.slug });
+
+  if (!post) notFound();
 
   return (
     <SmallSectionWrapper id={"Post-" + params.slug}>
@@ -21,7 +46,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
           <div>
             <div className="w-full h-[450px] mb-[72px]">
               <Image
-                src={post?.thumbnail!}
+                src={post?.thumbnail}
                 alt={"image-" + post?.title}
                 width={768}
                 height={450}
@@ -29,7 +54,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
                 unoptimized
               />
             </div>
-            <div className="w-full px-[42px]">
+            <div className="w-full">
               <div className="mb-[42px] flex justify-between">
                 <div className="flex gap-[10px]">
                   {post?.tags.map((tag) => (
@@ -51,16 +76,16 @@ export default async function Post({ params }: { params: { slug: string } }) {
                     </span>
                   </div>
                   <span className="text-neutral-500">
-                    {stringifyDate(post?.created_at!)}
+                    {stringifyDate(post?.created_at)}
                   </span>
                 </div>
               </div>
-              <P>{post?.content}</P>
+              <MdViewer markdown={post?.content} />
             </div>
           </div>
         </div>
 
-        <div className="flex flex-col gap-[52px] w-[372px]">
+        <div className="flex flex-col gap-[52px] w-full">
           <H3>Berita Terkait</H3>
           <Related tags={post?.tags!} />
         </div>

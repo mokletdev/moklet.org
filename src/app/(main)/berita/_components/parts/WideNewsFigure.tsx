@@ -7,7 +7,7 @@ export function WideNewsFigure({
   post,
 }: Readonly<{ post: PostWithTagsAndUser }>) {
   return (
-    <figure className="w-full h-[172px] lg:h-[140px] lg:w-[716px] xl:w-[560px] xl:h-[140px] flex items-center gap-[26px]">
+    <figure className="w-full h-[172px] lg:h-[140px] md:w-[45%] md:h-[140px] flex gap-[26px]">
       <div className="min-w-[140px] h-full">
         <Image
           src={post.thumbnail}
@@ -31,7 +31,7 @@ export function WideNewsFigure({
             </span>
           </div>
         </Link>
-        <div className="flex flex-col justify-start gap-[10px] sm:flex-row w-full md:gap-0 sm:justify-between">
+        <div className="flex flex-col justify-start gap-[10px] sm:flex-row w-full md:gap-0 items-center sm:justify-between">
           <div className="flex items-center gap-2">
             <Image
               src={post.user.user_pic}

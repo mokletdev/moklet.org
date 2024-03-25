@@ -4,14 +4,13 @@ import { findForm } from "@/utils/database/form.query";
 import { nextGetServerSession } from "@/lib/next-auth";
 import { redirect, RedirectType, notFound } from "next/navigation";
 import Link from "next/link";
-import { findSubmission } from "@/utils/database/submission.query";
-import Form from "../_components/Form";
-import ForbiddenForm from "../_components/ForbiddenForm";
+import { findSubmissionWithForm } from "@/utils/database/submission.query";
+import Form from "../../_components/Form";
+import ForbiddenForm from "../../_components/ForbiddenForm";
 import { Metadata } from "next";
-import { headers } from "next/headers";
 
 type Props = {
-  params: { id: string };
+  params: { id: string; id_submission: string };
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -23,21 +22,44 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function transformToArrayCheckbox(inputArray: Array<any>) {
+  return inputArray.reduce((acc, item) => {
+    const group = acc.find(
+      (group: { field_id: string }) => group.field_id === item.field_id,
+    );
+    if (group) {
+      group.value = [].concat(group.value, item.value);
+    } else {
+      acc.push({
+        ...item,
+        value: item.value,
+      });
+    }
+    return acc;
+  }, []);
+}
+
 const page = async ({ params }: Props) => {
   const session = await nextGetServerSession();
-  const headersList = headers();
-  const userAgent = headersList.get("User-Agent");
-
-  if (userAgent?.toLocaleLowerCase()?.includes("whatsapp")) return <></>;
   if (!session)
     return redirect(
-      "/auth/signin?callbackUrl=/form/" + params.id,
+      "/auth/signin?callbackUrl=/form/" +
+        params.id +
+        "/" +
+        params.id_submission,
       RedirectType.replace,
     );
 
-  var form = await findForm({ id: params.id });
+  const submission = await findSubmissionWithForm({
+    user_id: session.user?.id,
+    form_id: params.id,
+    id: params.id_submission,
+  });
 
-  if (!form) return notFound();
+  if (!submission) return notFound();
+
+  const form = submission?.form;
+
   if (!form.is_open) return <ForbiddenForm />;
   if (
     (form.open_at && new Date(form.open_at).getTime() > new Date().getTime()) ||
@@ -45,16 +67,8 @@ const page = async ({ params }: Props) => {
   )
     return <ForbiddenForm />;
 
-  if (form.submit_once) {
-    const submission = await findSubmission({
-      user_id: session.user?.id,
-      form_id: params.id,
-    });
-    if (submission && form.allow_edit)
-      return redirect(params.id + "/" + submission?.id);
-    else if (submission)
-      return <ForbiddenForm message="Anda sudah menjawab formulir ini." />;
-  }
+  if (!form.allow_edit)
+    return <ForbiddenForm message="Anda sudah menjawab formulir ini." />;
 
   return (
     <div className="items-start justify-between mx-auto max-w-[90vw] w-[640px] bg-white rounded-md">
@@ -72,7 +86,12 @@ const page = async ({ params }: Props) => {
           * Menunjukkan pertanyaan yang wajib diisi
         </P>
       </div>
-      <Form form={form} a={session.user?.id!} b={params.id} />
+      <Form
+        form={form}
+        a={session.user?.id!}
+        b={params.id}
+        answers={transformToArrayCheckbox(submission.fields)}
+      />
     </div>
   );
 };

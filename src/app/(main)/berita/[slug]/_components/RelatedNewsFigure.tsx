@@ -1,24 +1,14 @@
-import Link from "next/link";
-import Image from "./Image";
+import Image from "@/app/_components/global/Image";
+import { Tags } from "@/app/_components/global/NewsFigure";
 import { PostWithTagsAndUser } from "@/types/entityRelations";
 import { stringifyDate } from "@/utils/atomics";
-import { Tag } from "@prisma/client";
+import Link from "next/link";
 
-export function Tags({ tag }: Readonly<{ tag: Tag }>) {
+export default function RelatedNewsFigure({
+  post,
+}: Readonly<{ post: PostWithTagsAndUser }>) {
   return (
-    <Link
-      key={tag.tagName}
-      href={`/berita/tags/${tag.tagName}`}
-      className="rounded-full bg-primary-50 text-primary-400 px-[18px] py-1.5 transition-all duration-500 hover:bg-primary-400 hover:text-primary-50"
-    >
-      <span className="text-sm">{tag.tagName}</span>
-    </Link>
-  );
-}
-
-export function NewsFigure({ post }: Readonly<{ post: PostWithTagsAndUser }>) {
-  return (
-    <figure className="w-full md:w-[30%]">
+    <figure className="w-full">
       <div className="h-[200px] w-full">
         <Image
           src={post.thumbnail}

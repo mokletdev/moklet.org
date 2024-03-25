@@ -21,3 +21,7 @@
 ::selection {
   @apply bg-primary-300 text-white;
 }
+
+.wmde-markdown p {
+  @apply text-neutral-500;
+}
