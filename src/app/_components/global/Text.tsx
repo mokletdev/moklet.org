@@ -31,7 +31,12 @@ export function Li({ children, className }: Readonly<TextProps>) {
 
 export function H2({ children, className }: Readonly<TextProps>) {
   return (
-    <h2 className={"text-[36px] md:text-4xl font-bold text-black " + className}>
+    <h2
+      className={
+        "text-[24px] md:text-4xl md:leading-[120%] font-bold text-black " +
+        className
+      }
+    >
       {children}
     </h2>
   );
