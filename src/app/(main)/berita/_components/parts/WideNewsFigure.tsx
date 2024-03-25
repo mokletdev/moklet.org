@@ -31,7 +31,7 @@ export function WideNewsFigure({
             </span>
           </div>
         </Link>
-        <div className="flex flex-col justify-start gap-[10px] sm:flex-row w-full md:gap-0 items-center sm:justify-between">
+        <div className="flex flex-col justify-start gap-[10px] sm:flex-row w-full md:gap-0 sm:items-center sm:justify-between">
           <div className="flex items-center gap-2">
             <Image
               src={post.user.user_pic}

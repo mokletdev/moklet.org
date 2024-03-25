@@ -17,7 +17,7 @@ export function SearchBar({ query: q }: { query?: string }) {
 
   return (
     <SmallSectionWrapper id="SearchBar">
-      <div className="flex justify-between items-center w-full mt-[30px] lg:mt-0">
+      <div className="flex justify-between items-center w-full mt-[30px] lg:mt-0 gap-4">
         <TextField
           placeholder="Cari berita di moklet.org..."
           className="w-[85%]"
