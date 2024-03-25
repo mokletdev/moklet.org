@@ -5,7 +5,6 @@ import { NextAuthProvider } from "./_components/main/NextAuthProvider";
 import { Toaster } from "sonner";
 import TopLoader from "./_components/main/TopLoader";
 
-
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

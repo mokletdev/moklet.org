@@ -11,7 +11,7 @@ export default async function detailRegistran({
 
   return (
     <React.Fragment>
-        <h1>Tes</h1>
+      <h1>Tes</h1>
     </React.Fragment>
   );
 }

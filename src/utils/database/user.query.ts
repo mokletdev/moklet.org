@@ -15,7 +15,7 @@ export const findUserAuth = async (email: string) => {
 
 export const findUserId = async (id: string) => {
   return await prisma.user_Auth.findUnique({ where: { id: id } });
-}
+};
 
 export const createUser = async (data: Prisma.UserUncheckedCreateInput) => {
   return await prisma.user.create({ data });
