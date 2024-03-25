@@ -1,5 +1,6 @@
 import { H4, P } from "@/app/_components/global/Text";
 import Image from "@/app/_components/global/Image";
+import Link from "next/link";
 
 interface DeveloperData {
   name: string;
@@ -7,6 +8,7 @@ interface DeveloperData {
   picture: string;
   instagram: string;
   email: string;
+  website?: string;
 }
 
 export default function DeveloperFigure({ dev }: { dev: DeveloperData }) {
@@ -32,11 +34,23 @@ export default function DeveloperFigure({ dev }: { dev: DeveloperData }) {
           <span className="w-[84px] text-neutral-500 font-[14px]">
             Instagram
           </span>
-          <span className="text-black font-normal">{dev.instagram}</span>
+          <Link
+            className="text-black font-normal hover:text-primary-400 transition-all"
+            href={"https://instagram.com/" + dev.instagram}
+            target="_blank"
+          >
+            @{dev.instagram}
+          </Link>
         </div>
         <div className="flex gap-[34px] mb-2 flex-row lg:flex-col lg:gap-0 xl:gap-[46px] xl:flex-row">
           <span className="w-[84px] text-neutral-500 font-[14px]">Email</span>
-          <span className="text-black font-normal">{dev.email}</span>
+          <Link
+            className="text-black font-normal hover:text-primary-400 transition-all"
+            href={`mailto:${dev.email}`}
+            target="_blank"
+          >
+            {dev.email}
+          </Link>
         </div>
       </div>
     </figure>
