@@ -19,7 +19,7 @@
     "@prisma/client": "^5.11.0",
     "@uiw/react-md-editor": "^4.0.4",
     "dotenv-cli": "^7.4.1",
-    "framer-motion": "^11.0.14",
+    "framer-motion": "^11.0.20",
     "next": "14.1.4",
     "next-auth": "^4.24.7",
     "nextjs-toploader": "^1.6.11",
