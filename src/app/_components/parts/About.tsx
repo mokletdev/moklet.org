@@ -24,7 +24,7 @@ export default function About() {
                   Kepemimpinan Siswa di Moklet melalui OSIS dan MPK
                 </H2>
                 <div
-                  className={`absolute left-[3px] top-[17px] md:top-[28px] -z-10 h-[16px] bg-primary-100 w-[190px] md:w-[288px]`}
+                  className={`absolute left-[3px] top-[32px] md:top-[26px] -z-10 h-[16px] bg-primary-100 w-[288px]`}
                 ></div>
               </div>
               <P>

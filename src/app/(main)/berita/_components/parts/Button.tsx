@@ -39,10 +39,10 @@ export function SearchButton({
       type={type}
       onClick={onClick}
       disabled={isDisabled}
-      className="hidden md:inline-block w-fit rounded-full bg-primary-400 px-6 py-3 transition-all duration-500 hover:bg-primary-500 disabled:bg-neutral-300"
+      className="hidden md:inline-block w-[131px] h-[50px] rounded-full bg-primary-400 px-6 py-3 transition-all duration-500 hover:bg-primary-500 disabled:bg-neutral-300"
     >
       <span
-        className={`text-base ${isDisabled ? "text-neutral-500" : "text-white"}`}
+        className={`text-base h-full w-full text-nowrap ${isDisabled ? "text-neutral-500" : "text-white"}`}
       >
         {children}
       </span>
