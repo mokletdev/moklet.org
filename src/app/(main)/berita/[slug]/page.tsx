@@ -1,9 +1,9 @@
 import Image from "@/app/_components/global/Image";
 import { Tags } from "@/app/_components/global/NewsFigure";
-import { H2, H3 } from "@/app/_components/global/Text";
+import { H2, H3, P } from "@/app/_components/global/Text";
 import { SmallSectionWrapper } from "@/app/_components/global/Wrapper";
 import { stringifyDate } from "@/utils/atomics";
-import { findPost } from "@/utils/database/post.query";
+import { findPost, updatePost } from "@/utils/database/post.query";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import GoBack from "./_components/BackButton";
@@ -34,6 +34,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const post = await findPost({ slug: params.slug });
 
   if (!post) notFound();
+  else await updatePost({ id: post.id }, { view_count: { increment: 1 } });
 
   return (
     <SmallSectionWrapper id={"Post-" + params.slug}>
@@ -55,13 +56,13 @@ export default async function Post({ params }: { params: { slug: string } }) {
               />
             </div>
             <div className="w-full">
-              <div className="mb-[42px] flex justify-between">
+              <div className="mb-[42px] flex justify-between items-center">
                 <div className="flex gap-[10px]">
                   {post?.tags.map((tag) => (
                     <Tags tag={tag} key={tag.tagName} />
                   ))}
                 </div>
-                <div className="flex items-center gap-[41px]">
+                <div className="flex items-center gap-[40px]">
                   <div className="flex items-center gap-3">
                     <Image
                       src={post?.user.user_pic!}
@@ -78,6 +79,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
                   <span className="text-neutral-500">
                     {stringifyDate(post?.created_at)}
                   </span>
+                  <P>{post.view_count} views</P>
                 </div>
               </div>
               <MdViewer markdown={post?.content} />
