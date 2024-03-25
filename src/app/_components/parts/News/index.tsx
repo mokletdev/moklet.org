@@ -17,7 +17,7 @@ export default async function News() {
               Berita Terbaru Organisasi & Sub-organisasi
             </H2>
             <div
-              className={`absolute left-[3px] top-[17px] md:top-[28px] -z-10 h-[16px] bg-primary-100 w-[72px] md:w-[108px]`}
+              className={`absolute left-[3px] top-[30px] md:top-[24px] -z-10 h-[16px] bg-primary-100 w-[108px] md:w-[108px]`}
             ></div>
           </div>
           <Link href="/berita">
