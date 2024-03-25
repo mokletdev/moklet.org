@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 interface LinkButtonProps {
   children?: ReactNode;
   href: string;
-  scroll?: boolean
+  scroll?: boolean;
 }
 
 export default function PrimaryLinkButton({
@@ -38,7 +38,7 @@ export function SecondaryLinkButton({
 export function TertiaryLinkButton({
   children,
   href,
-  scroll
+  scroll,
 }: Readonly<LinkButtonProps>) {
   return (
     <Link
