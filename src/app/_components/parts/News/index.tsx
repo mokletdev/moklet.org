@@ -1,13 +1,17 @@
+"use client";
+
 import { H2 } from "@/app/_components/global/Text";
 import { SectionWrapper } from "@/app/_components/global/Wrapper";
 import ArrowRight from "@/app/_components/icons/ArrowRight";
-import { findNewestPost } from "@/utils/database/post.query";
+import { PostWithTagsAndUser } from "@/types/entityRelations";
 import Link from "next/link";
 import { NewsFigure } from "../../global/NewsFigure";
 
-export default async function News() {
-  const latestPosts = await findNewestPost(5);
-
+export default function News({
+  latestPosts,
+}: Readonly<{
+  latestPosts: PostWithTagsAndUser[];
+}>) {
   return (
     <SectionWrapper id="berita">
       <div className="flex w-full flex-col gap-[54px]">

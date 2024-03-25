@@ -15,7 +15,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  var form = await findForm({ id: params.id });
+  let form = await findForm({ id: params.id });
 
   return {
     title: form?.title ?? "Not Found",
@@ -35,7 +35,7 @@ const page = async ({ params }: Props) => {
       RedirectType.replace,
     );
 
-  var form = await findForm({ id: params.id });
+  let form = await findForm({ id: params.id });
 
   if (!form) return notFound();
   if (!form.is_open) return <ForbiddenForm />;

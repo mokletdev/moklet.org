@@ -7,7 +7,7 @@ interface DeveloperData {
   role: string;
   picture: string;
   instagram: string;
-  email: string;
+  linkedin: string;
   website?: string;
 }
 
@@ -18,17 +18,15 @@ export default function DeveloperFigure({ dev }: { dev: DeveloperData }) {
         <H4>{dev.name}</H4>
         <P>{dev.role}</P>
       </div>
-      <div className="w-full h-0 border border-black"></div>
-      <div className="w-full h-[278px] lg xl:h-[278px] lg:h-[183px]">
-        <Image
-          src={dev.picture}
-          alt={`${dev.name}'s Picture`}
-          width={372}
-          height={278}
-          className="w-full h-full"
-          unoptimized
-        />
-      </div>
+      <div className="w-full h-0 border border-neutral-400 rounded-full"></div>
+      <Image
+        src={dev.picture}
+        alt={`${dev.name}'s Picture`}
+        width={372}
+        height={278}
+        className="w-full h-full xl:h-[278px] lg:h-[278px] rounded-xl"
+        unoptimized
+      />
       <div>
         <div className="flex gap-[34px] mb-2 flex-row lg:flex-col lg:gap-0 xl:gap-[46px] xl:flex-row">
           <span className="w-[84px] text-neutral-500 font-[14px]">
@@ -43,13 +41,25 @@ export default function DeveloperFigure({ dev }: { dev: DeveloperData }) {
           </Link>
         </div>
         <div className="flex gap-[34px] mb-2 flex-row lg:flex-col lg:gap-0 xl:gap-[46px] xl:flex-row">
-          <span className="w-[84px] text-neutral-500 font-[14px]">Email</span>
+          <span className="w-[84px] text-neutral-500 font-[14px]">
+            LinkedIn
+          </span>
           <Link
             className="text-black font-normal hover:text-primary-400 transition-all"
-            href={`mailto:${dev.email}`}
+            href={`https://linkedin.com/${dev.linkedin}`}
             target="_blank"
           >
-            {dev.email}
+            {dev.linkedin}
+          </Link>
+        </div>
+        <div className="flex gap-[34px] mb-2 flex-row lg:flex-col lg:gap-0 xl:gap-[46px] xl:flex-row">
+          <span className="w-[84px] text-neutral-500 font-[14px]">Website</span>
+          <Link
+            className="text-black font-normal hover:text-primary-400 transition-all"
+            href={dev.website ? `https://${dev.website}` : "#"}
+            target="_blank"
+          >
+            {dev.website ?? "-"}
           </Link>
         </div>
       </div>

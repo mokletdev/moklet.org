@@ -14,7 +14,7 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  var form = await findForm({ id: params.id });
+  let form = await findForm({ id: params.id });
 
   return {
     title: form?.title ?? "Not Found",
