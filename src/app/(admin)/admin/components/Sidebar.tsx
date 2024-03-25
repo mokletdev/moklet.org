@@ -1,14 +1,12 @@
-// import { Session } from "next-auth";
+import { Session } from "next-auth";
 import Link from "next/link";
-import { FaCheck, FaCircle } from "react-icons/fa";
-import { IoIosPodium } from "react-icons/io";
+import { IoIosChatboxes } from "react-icons/io";
 
 type navbarParam = {
   nav: boolean;
-  //  session: Session | null;
+   session: Session | null;
 };
-// export function Sidebar({nav, session}: navbarParam) {
-export function Sidebar({ nav }: navbarParam) {
+export function Sidebar({nav, session}: navbarParam) {
   return (
     <aside
       id="sidebar"
@@ -43,120 +41,13 @@ export function Sidebar({ nav }: navbarParam) {
                   href="/admin/registrations"
                   className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 "
                 >
-                  <FaCheck className="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900" />
+                  <IoIosChatboxes className="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900" />
                   <span className="ml-3 flex-1 whitespace-nowrap">
                     Registrations
                   </span>
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/admin/cyber-security"
-                  className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100"
-                >
-                  <IoIosPodium className="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900" />
-                  <span className="ml-3 flex-1 whitespace-nowrap">
-                    Cyber Security
-                  </span>
-                </Link>
-                <div className="ml-6 mt-3 flex flex-col overflow-hidden border-l-2 border-gray-500 pl-3 text-sm transition-all duration-300">
-                  <Link
-                    href={"/admin/cyber-security/tahap-1"}
-                    className="rounded-lg px-[14px] py-[10px] transition-all duration-300 hover:bg-gray-100"
-                  >
-                    Tahap 1
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <Link
-                  href="/admin/cloud-computing"
-                  className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100"
-                >
-                  <IoIosPodium className="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900" />
-                  <span className="ml-3 flex-1 whitespace-nowrap">
-                    Cloud Computing
-                  </span>
-                </Link>
-                <div className="ml-6 mt-3 flex flex-col overflow-hidden border-l-2 border-gray-500 pl-3 text-sm transition-all duration-300">
-                  <Link
-                    href={"/admin/cloud-computing/tahap-1"}
-                    className="rounded-lg px-[14px] py-[10px] transition-all duration-300 hover:bg-gray-100"
-                  >
-                    Tahap 1
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <Link
-                  href="/admin/web-design"
-                  className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100"
-                >
-                  <IoIosPodium className="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900" />
-                  <span className="ml-3 flex-1 whitespace-nowrap">
-                    Web Design
-                  </span>
-                </Link>
-                <div className="ml-6 mt-3 flex flex-col overflow-hidden border-l-2 border-gray-500 pl-3 text-sm transition-all duration-300">
-                  <Link
-                    href={"/admin/web-design/tahap-1"}
-                    className="rounded-lg px-[14px] py-[10px] transition-all duration-300 hover:bg-gray-100"
-                  >
-                    Tahap 1
-                  </Link>
-                  <Link
-                    href={"/admin/web-design/tahap-2"}
-                    className="rounded-lg px-[14px] py-[10px] transition-all duration-300 hover:bg-gray-100"
-                  >
-                    Tahap 2
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <Link
-                  href="/admin/business-plan"
-                  className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100"
-                >
-                  <IoIosPodium className="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900" />
-                  <span className="ml-3 flex-1 whitespace-nowrap">
-                    Business Plan
-                  </span>
-                </Link>
-                <div className="ml-6 mt-3 flex flex-col overflow-hidden border-l-2 border-gray-500 pl-3 text-sm transition-all duration-300">
-                  <Link
-                    href={"/admin/business-plan/tahap-1"}
-                    className="rounded-lg px-[14px] py-[10px] transition-all duration-300 hover:bg-gray-100"
-                  >
-                    Tahap 1
-                  </Link>
-                  <Link
-                    href={"/admin/business-plan/tahap-2"}
-                    className="rounded-lg px-[14px] py-[10px] transition-all duration-300 hover:bg-gray-100"
-                  >
-                    Tahap 2
-                  </Link>
-                </div>
-              </li>
-              <li>
-                <Link
-                  href="/admin/mobile-legends"
-                  className="group flex items-center rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100"
-                >
-                  <IoIosPodium className="h-6 w-6 flex-shrink-0 text-gray-500 transition duration-75 group-hover:text-gray-900" />
-                  <span className="ml-3 flex-1 whitespace-nowrap">
-                    E-Sport Mobile Legends
-                  </span>
-                </Link>
-                <div className="ml-6 mt-3 flex flex-col overflow-hidden border-l-2 border-gray-500 pl-3 text-sm transition-all duration-300">
-                  <Link
-                    href={"/admin/mobile-legends/tahap-1"}
-                    className="rounded-lg px-[14px] py-[10px] transition-all duration-300 hover:bg-gray-100"
-                  >
-                    Tahap 1
-                  </Link>
-                </div>
-              </li>
-              {/* {session?.user?.role == "SuperAdmin" ? ( */}
+              {session?.user?.role == "SuperAdmin" ? (
               <li>
                 <Link
                   href="/admin/users"
@@ -179,7 +70,7 @@ export function Sidebar({ nav }: navbarParam) {
                   </span>
                 </Link>
               </li>
-              {/* ) : null} */}
+              ) : null}
             </ul>
           </div>
         </div>
