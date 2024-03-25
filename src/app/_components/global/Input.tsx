@@ -54,7 +54,7 @@ export function TextField({
         defaultValue={value}
         placeholder={placeholder}
         onChange={handleChange}
-        className="rounded-xl border border-neutral-500 px-[18px] active:border-black hover:border-black py-[14px] text-black placeholder-neutral-500 focus:outline-none transition-all duration-500"
+        className="rounded-xl border border-neutral-400 px-[18px] active:border-black hover:border-black py-[14px] text-black placeholder-neutral-500 focus:outline-none transition-all duration-500"
         required={required}
         onKeyDown={onKeyDown}
       />
