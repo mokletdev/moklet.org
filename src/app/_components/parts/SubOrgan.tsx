@@ -26,7 +26,7 @@ export default function SubOrgan() {
                 Mengembangkan Bakat di Sub-organ
               </H2>
               <div
-                className={`absolute left-[3px] top-[17px] md:top-[28px] -z-10 h-[16px] bg-primary-100 w-[220px] md:w-[330px]`}
+                className={`absolute left-[3px] top-[32px] md:top-[28px] -z-10 h-[16px] bg-primary-100 w-[330px]`}
               ></div>
             </div>
             <P>

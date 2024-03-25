@@ -37,7 +37,11 @@ export default function PageNav({
               <EclipseIcon className="w-[6px] h-[6px]" />
             </div>
           ) : (
-            <TertiaryLinkButton href={"?page=" + num.toString()} key={num}>
+            <TertiaryLinkButton
+              scroll={false}
+              href={"?page=" + num.toString()}
+              key={num}
+            >
               {num}
             </TertiaryLinkButton>
           ),

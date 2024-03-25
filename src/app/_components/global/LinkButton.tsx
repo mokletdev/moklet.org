@@ -4,6 +4,7 @@ import { ReactNode } from "react";
 interface LinkButtonProps {
   children?: ReactNode;
   href: string;
+  scroll?: boolean;
 }
 
 export default function PrimaryLinkButton({
@@ -37,10 +38,12 @@ export function SecondaryLinkButton({
 export function TertiaryLinkButton({
   children,
   href,
+  scroll,
 }: Readonly<LinkButtonProps>) {
   return (
     <Link
       href={href}
+      scroll={scroll}
       className={
         "text-base text-black hover:text-primary-400 transition-all duration-500"
       }

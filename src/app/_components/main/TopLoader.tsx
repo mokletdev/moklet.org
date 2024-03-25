@@ -2,7 +2,7 @@
 import { usePathname, useSearchParams } from "next/navigation";
 import NextjsTopLoader from "nextjs-toploader";
 import * as NProgress from "nprogress";
-import { Suspense, useEffect } from "react";
+import { useEffect } from "react";
 
 export default function TopLoader() {
   const pathname = usePathname();
