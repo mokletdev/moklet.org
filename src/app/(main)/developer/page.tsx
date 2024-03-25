@@ -1,7 +1,5 @@
-import Image from "@/app/_components/global/Image";
-import Link from "next/link";
-import { SectionWrapper } from "@/app/_components/global/Wrapper";
 import { H1, P } from "@/app/_components/global/Text";
+import { SectionWrapper } from "@/app/_components/global/Wrapper";
 import DeveloperFigure from "./_components/DeveloperFigure";
 
 const devs = [
@@ -10,56 +8,62 @@ const devs = [
     role: "Fullstack Developer",
     picture: "https://avatars.githubusercontent.com/u/83589651",
     instagram: "kusindr_",
-    email: "work@benspace.xyz",
+    linkedin: "in/kusindraaji",
+    website: "www.benspace.xyz",
   },
   {
     name: "Ahsan Awadullah Azizan",
     role: "Fullstack Developer",
-    picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
+    picture: "https://avatars.githubusercontent.com/u/116133300",
     instagram: "ahsanzizan",
-    email: "contact@ahsanzizan.xyz",
+    linkedin: "in/ahsan-azizan",
+    website: "www.ahsanzizan.xyz",
   },
   {
     name: "Teguh Bayu Pratama",
     role: "Frontend Developer",
-    picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
+    picture: "https://avatars.githubusercontent.com/u/149038828",
     instagram: "soyuz_slav",
-    email: "drimi@ambatukam.com",
+    linkedin: "in/teguhbayupratama",
+    website: "bayu.xtero.live",
   },
   {
     name: "Muhammad Fadhil Kholaf",
     role: "Frontend Developer",
-    picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
+    picture: "https://avatars.githubusercontent.com/u/110389260",
     instagram: "tlg69.fadhil",
-    email: "drimi@ambatukam.com",
+    linkedin: "in/muhammad-fadhil-kholaf-7b1a7a270",
+    website: "fadhilkholaf.my.id",
   },
   {
     name: "Moch. Gilang Ramadhan",
     role: "Graphic & UI/UX Designer",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
     instagram: "guilangs_",
-    email: "drimi@ambatukam.com",
+    linkedin: "in/gilang-ramadhan-4420b8285",
   },
   {
     name: "Pandhu Arya Munjalindra",
-    role: "Hengker",
+    role: "-",
     picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
-    instagram: "loremipsum",
-    email: "drimi@ambatukam.com",
+    instagram: "@pandhuu._",
+    linkedin: "in/pandhu-arya",
+    website: "pandhu-munjalindra.xyz",
   },
   {
     name: "Muhammad Zuhair Zuhdi",
-    role: "Hengker",
-    picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
+    role: "Backend Developer",
+    picture: "https://avatars.githubusercontent.com/u/67100526",
     instagram: "muhammad_zuhair_zuhdi",
-    email: "drimi@ambatukam.com",
+    linkedin: "in/frostfire2007",
   },
   {
     name: "Arsyad Ali Mahardika",
-    role: "Hengker",
-    picture: "https://pbs.twimg.com/media/GHK3FYNa8AAR21N.jpg",
+    role: "Frontend Developer",
+    picture: "https://avatars.githubusercontent.com/u/90751730",
     instagram: "arsyadam.id",
-    email: "drimi@ambatukam.com",
+    linkedin: "in/arsyadam",
+    website: "arsyadam.id",
   },
 ];
 
