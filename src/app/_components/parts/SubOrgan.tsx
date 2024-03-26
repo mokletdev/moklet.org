@@ -22,7 +22,7 @@ export default function SubOrgan() {
         <div className="w-full max-w-3xl">
           <div className="mb-[42px]">
             <div className="relative">
-              <H2 className={"z-10 font-bold text-black"}>
+              <H2 className={"z-10 font-bold text-black mb-[18px]"}>
                 Mengembangkan Bakat di Sub-organ
               </H2>
               <div

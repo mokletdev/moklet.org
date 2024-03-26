@@ -20,7 +20,7 @@ export default function About() {
           <div className="mb-11">
             <div className="mb-[42px]">
               <div className="relative">
-                <H2 className={"z-10 font-bold text-black"}>
+                <H2 className={"z-10 font-bold text-black mb-[18px]"}>
                   Kepemimpinan Siswa di Moklet melalui OSIS dan MPK
                 </H2>
                 <div

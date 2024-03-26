@@ -3,10 +3,10 @@ import { Suspense } from "react";
 import { Toaster } from "sonner";
 import { NextAuthProvider } from "./_components/main/NextAuthProvider";
 import TopLoader from "./_components/main/TopLoader";
+import "./globals.css";
+import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
-import "./globals.css";
-import { montserrat } from "@/utils/loadFont";
 
 export const metadata: Metadata = {
   title: {
