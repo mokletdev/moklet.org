@@ -99,7 +99,6 @@ export const submitForm = async (
     user_id,
     form_id,
     fields: { create: fields_create },
-    data: "",
   });
 
   return { submission_id: submission.id, success: true };
