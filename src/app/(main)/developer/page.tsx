@@ -44,9 +44,9 @@ const devs = [
   },
   {
     name: "Pandhu Arya Munjalindra",
-    role: "-",
+    role: "Frontend Developer",
     picture: "https://www.pandhu-munjalindra.xyz/images/pandhu.jpg",
-    instagram: "@pandhuu._",
+    instagram: "pandhuu._",
     linkedin: "in/pandhu-arya",
     website: "pandhu-munjalindra.xyz",
   },
