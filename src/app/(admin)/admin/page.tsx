@@ -1,16 +1,16 @@
-"use client"
-import { H4, P } from "@/app/_components/global/Text"
-import { useState } from "react"
-import Modal from "./components/Modal"
+"use client";
+import { H4, P } from "@/app/_components/global/Text";
+import { useState } from "react";
+import Modal from "./components/Modal";
 
 interface AdminInterface {
-  name: string
-  email: string
-  nickname: string
-  gender: string
-  country: string
-  language: string
-  timeZone: string
+  name: string;
+  email: string;
+  nickname: string;
+  gender: string;
+  country: string;
+  language: string;
+  timeZone: string;
 }
 
 const dummyData: AdminInterface = {
@@ -20,8 +20,9 @@ const dummyData: AdminInterface = {
   gender: "non binary",
   country: "Zimbabwe",
   language: "african british",
-  timeZone: "Jakarta, Daerah Khusus Ibukota Jakarta (GMT+7) Kamis, 28 Maret 2024, 11.13"
-}
+  timeZone:
+    "Jakarta, Daerah Khusus Ibukota Jakarta (GMT+7) Kamis, 28 Maret 2024, 11.13",
+};
 
 export default function Admin() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -43,7 +44,12 @@ export default function Admin() {
             <P>{dummyData.email}</P>
           </div>
         </div>
-        <button onClick={openModal} className="px-6 py-2 w-24 h-12 rounded-lg bg-green-400 hover:bg-green-500 text-white">Edit</button>
+        <button
+          onClick={openModal}
+          className="px-6 py-2 w-24 h-12 rounded-lg bg-green-400 hover:bg-green-500 text-white"
+        >
+          Edit
+        </button>
       </header>
       <article className="my-6 flex flex-wrap gap-12">
         <div className="w-1/3">
@@ -73,5 +79,5 @@ export default function Admin() {
       </article>
       <Modal isOpen={isModalOpen} onClose={closeModal} />
     </>
-  )
+  );
 }
