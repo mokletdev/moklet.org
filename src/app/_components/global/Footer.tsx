@@ -23,7 +23,7 @@ const mainMenus: FootOption[] = [
   { title: "Berita", href: "/berita" },
   { title: "Organisasi", href: "/organisasi" },
   { title: "Tentang", href: "/tentang" },
-  { title: "Kontributor", href: "/kontributor" },
+  { title: "Gabung Kontributor", href: "/kontributor" },
 ];
 
 const usefulLinks: FootOption[] = [
