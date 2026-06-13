@@ -30,7 +30,7 @@
     "dotenv-cli": "^8.0.0",
     "echarts": "^5.5.0",
     "echarts-for-react": "^3.0.2",
-    "next": "^14.2.22",
+    "next": "^14.2.25",
     "next-auth": "^4.24.7",
     "next-nprogress-bar": "^2.3.11",
     "nextjs-toploader": "^1.6.12",
