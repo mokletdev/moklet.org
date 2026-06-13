@@ -19,7 +19,7 @@ const navOptions: NavOption[] = [
   { title: "Berita", href: "/berita" },
   { title: "Organisasi", href: "/organisasi" },
   { title: "Tentang", href: "/tentang" },
-  { title: "Kontributor", href: "/kontributor" },
+  { title: "Kontribusi", href: "/kontributor" },
 ];
 
 export default function Navbar() {
