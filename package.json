@@ -18,7 +18,7 @@
     "node": ">=18"
   },
   "dependencies": {
-    "@next/third-parties": "^14.2.5",
+    "@next/third-parties": "^16.2.9",
     "@prisma/client": "^5.22.0",
     "@types/bcrypt": "^5.0.2",
     "@uiw/react-md-editor": "^4.0.4",
@@ -30,8 +30,8 @@
     "dotenv-cli": "^8.0.0",
     "echarts": "^5.5.0",
     "echarts-for-react": "^3.0.2",
-    "next": "^14.2.22",
-    "next-auth": "^4.24.7",
+    "next": "^16.2.9",
+    "next-auth": "^4.24.14",
     "next-nprogress-bar": "^2.3.11",
     "nextjs-toploader": "^1.6.12",
     "qr-code-styling": "^1.9.1",
